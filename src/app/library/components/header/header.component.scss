@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+
+// Header Styles
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2392156863);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4196078431);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0081ff;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav li {
+  margin: 0 2rem;
+}
+
+header nav a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #18ffe3;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  margin-left: 2rem;
+}
+
+.nav-list {
+  list-style-type:none;
+}
+
+.logo-container {
+  display: flex;
+}
+
+.text-logo {
+  font-size: 35px;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+}
