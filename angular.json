@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "fundamentally-investor-site": {
+    "fundamentally-fleek": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/fundamentally-investor-site",
+            "outputPath": "dist/fundamentally-fleek",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -52,8 +52,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2.5kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ],
               "fileReplacements": [{
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "fundamentally-investor-site:build:production"
+              "buildTarget": "fundamentally-fleek:build:production"
             },
             "development": {
-              "buildTarget": "fundamentally-investor-site:build:development"
+              "buildTarget": "fundamentally-fleek:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "fundamentally-investor-site:build"
+            "buildTarget": "fundamentally-fleek:build"
           }
         },
         "test": {

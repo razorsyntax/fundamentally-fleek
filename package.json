@@ -1,5 +1,5 @@
 {
-  "name": "fundamentally-investor-site",
+  "name": "fundamentally-fleek",
   "version": "0.0.0",
   "node": "18.19.1",
   "engines": {
@@ -13,10 +13,10 @@
     "test": "ng test",
     "build:prod": "npm install && npx ng build --configuration production",
     "serve:ssr:fundamentally-fleek": "node dist/fundamentally-fleek/server/server.mjs",
-    "prerender": "ng run fundamentally-investor-site:prerender",
-    "dev:ssr": "ng run fundamentally-investor-site:serve-ssr",
-    "serve:ssr": "node dist/fundamentally-investor-site/server/main.js",
-    "build:ssr": "ng build && ng run fundamentally-investor-site:server"
+    "prerender": "ng run fundamentally-fleek:prerender",
+    "dev:ssr": "ng run fundamentally-fleek:serve-ssr",
+    "serve:ssr": "node dist/fundamentally-fleek/server/main.js",
+    "build:ssr": "ng build && ng run fundamentally-fleek:server"
   },
   "private": true,
   "dependencies": {
