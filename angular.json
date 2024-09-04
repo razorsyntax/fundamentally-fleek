@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "fundamentally-investor-site:build:production"
+              "buildTarget": "fundamentally-investor-site:build:production"
             },
             "development": {
-              "browserTarget": "fundamentally-investor-site:build:development"
+              "buildTarget": "fundamentally-investor-site:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fundamentally-investor-site:build"
+            "buildTarget": "fundamentally-investor-site:build"
           }
         },
         "test": {
