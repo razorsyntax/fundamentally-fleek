@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:prod": "npm install && npx ng build --configuration production",
+    "serve:ssr:fundamentally-fleek": "node dist/fundamentally-fleek/server/server.mjs",
+    "prerender": "ng run fundamentally-fleek:prerender"
   },
   "private": true,
   "dependencies": {
