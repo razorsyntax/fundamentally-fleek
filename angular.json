@@ -92,7 +92,6 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -109,66 +108,6 @@
             ],
             "scripts": []
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/fundamentally-investor-site/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "optimization": true,
-            "inlineStyleLanguage": "scss"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "development": {
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@angular-devkit/build-angular:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "fundamentally-investor-site:build:development",
-              "serverTarget": "fundamentally-investor-site:server:development"
-            },
-            "production": {
-              "browserTarget": "fundamentally-investor-site:build:production",
-              "serverTarget": "fundamentally-investor-site:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@angular-devkit/build-angular:prerender",
-          "options": {
-            "routes": [
-              "/"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "fundamentally-investor-site:build:production",
-              "serverTarget": "fundamentally-investor-site:server:production"
-            },
-            "development": {
-              "browserTarget": "fundamentally-investor-site:build:development",
-              "serverTarget": "fundamentally-investor-site:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }
