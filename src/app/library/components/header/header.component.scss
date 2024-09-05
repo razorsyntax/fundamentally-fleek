@@ -10,7 +10,6 @@ header {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4196078431);
   backdrop-filter: blur(10px);
   z-index: 9999;
-
 }
 
 header .container {
@@ -53,7 +52,7 @@ header nav a:hover {
 }
 
 .nav-list {
-  list-style-type:none;
+  list-style-type: none;
 }
 
 .logo-container {
@@ -62,6 +61,6 @@ header nav a:hover {
 
 .text-logo {
   font-size: 35px;
-    padding-top: 0.5rem;
-    padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
 }

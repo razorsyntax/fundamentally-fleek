@@ -8,7 +8,7 @@ section.section-background {
 			.title {
 
 				h2 {
-
+          color: #9c27b0;
 				}
 				h3 {
 
@@ -18,5 +18,20 @@ section.section-background {
 
 			}
 		}
+
 	}
+}
+
+.asset-details-img {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  p {
+    margin-top: 6rem;
+  }
+
+  .asset-img {
+    border: 1px solid white;
+    border-radius: 10px;
+  }
 }

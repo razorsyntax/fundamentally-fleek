@@ -1,0 +1,40 @@
+section.features {
+  padding: 10rem 0;
+  width: 1200px;
+  margin: auto;
+  color: #ffffff;
+  .container {
+    h2 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #9c27b0;
+      margin-bottom: 5rem;
+    }
+    ul {
+      li {
+        list-style-type: none;
+        margin: 3rem;
+        padding: 3rem;
+        width: 800px;
+        border: 2px dotted #9c27b0;
+        border-radius: 10px;
+        .list-item {
+          display: flex;
+          .emoji {
+            font-size: 20px;
+          }
+          h3 {
+            margin-top: 0;
+            margin-left: 1rem;
+            color: #18ffe3;
+          }
+        }
+        p {
+          font-size: 2rem;
+          color: #fff;
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+}
