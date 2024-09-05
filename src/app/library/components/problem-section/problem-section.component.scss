@@ -30,8 +30,12 @@ section.section-background {
   width: 100%;
   margin: auto;
   text-align: center;
-  p {
+  .feature-title {
     margin-top: 6rem;
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 1rem;
   }
 
   .asset-img {
