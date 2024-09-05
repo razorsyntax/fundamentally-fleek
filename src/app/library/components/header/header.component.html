@@ -12,9 +12,30 @@
       </div>
 
       <ul class="nav-list">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#investment">Investment</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li>
+          <a
+            [routerLink]="['/']"
+            fragment="features"
+            (click)="onLinkClick($event, 'features')"
+            >Features</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/']"
+            fragment="investments"
+            (click)="onLinkClick($event, 'investments')"
+            >Investment</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/']"
+            fragment="contact"
+            (click)="onLinkClick($event, 'contact')"
+            >Contact Us</a
+          >
+        </li>
       </ul>
     </nav>
   </div>
