@@ -13,10 +13,10 @@ import { HttpClient } from '@angular/common/http';
   imports: [HeaderComponent, HeroSectionComponent, ProblemSectionComponent, FeaturesSectionComponent]
 })
 export class HomeComponent implements OnInit {
-
   pdfUrl = 'assets/documents/Fundamentally_v001_PitchPlan.pdf';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit(): void {
   }
