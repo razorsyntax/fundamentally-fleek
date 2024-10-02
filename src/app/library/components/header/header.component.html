@@ -47,6 +47,41 @@
           >
         </li>
 
+        <ul class="nav-list" [ngStyle]="{ display: !isNavbarVisible ? 'flex' : 'none' }">
+          <li>
+            <a
+              [routerLink]="['/']"
+              fragment="features"
+              (click)="onLinkClick($event, 'features')"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/']"
+              fragment="investments"
+              (click)="onLinkClick($event, 'investments')"
+              >Investment</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/']"
+              fragment="contact"
+              (click)="onLinkClick($event, 'contact')"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.angelinvestmentnetwork.us/business-proposals/invest-smarter-not-harder-15-1451539"
+              target="self"
+              >As seen on Angel Investment Network</a
+            >
+          </li>
+
+        </ul>
+
       </ul>
     </nav>
   </div>

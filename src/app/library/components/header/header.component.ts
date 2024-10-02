@@ -28,8 +28,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.isMobileScreen = this.screenSizeService.isMobileScreen;
+    if(!this.isMobileScreen) {
+      this.isNavbarVisible = true;
+    }
     this.screenSizeSubscription = this.screenSizeService.isMobileScreenChange.subscribe((isMobileScreen) => {
       this.isMobileScreen = isMobileScreen;
+      if(!this.isMobileScreen) {
+        this.isNavbarVisible = true;
+      }
+
     });
     this.route.fragment.subscribe(() => {
       this.scrollToFragment();
