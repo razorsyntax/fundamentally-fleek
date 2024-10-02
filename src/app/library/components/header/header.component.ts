@@ -1,7 +1,8 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ScreenSizeService } from 'src/app/screen-size.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   isNavbarVisible = false;
   isMobileScreen: boolean = false;
   private screenSizeSubscription!: Subscription;
@@ -22,12 +23,21 @@ export class HeaderComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private viewportScroller: ViewportScroller,
+    private screenSizeService: ScreenSizeService
   ) {}
 
   ngOnInit() {
+    this.isMobileScreen = this.screenSizeService.isMobileScreen;
+    this.screenSizeSubscription = this.screenSizeService.isMobileScreenChange.subscribe((isMobileScreen) => {
+      this.isMobileScreen = isMobileScreen;
+    });
     this.route.fragment.subscribe(() => {
       this.scrollToFragment();
     });
+  }
+
+  ngOnDestroy() {
+    this.screenSizeSubscription.unsubscribe();
   }
 
   onLinkClick(event: Event, fragment: string) {
@@ -35,7 +45,6 @@ export class HeaderComponent implements OnInit {
     this.viewportScroller.scrollToAnchor(fragment);
     this.closeNavbar();
   }
-
 
   private scrollToFragment() {
     const fragment = this.route.snapshot.fragment;
@@ -50,4 +59,9 @@ export class HeaderComponent implements OnInit {
     this.isNavbarVisible = false;
   }
 
- }
+  toggleNavbar() {
+    console.log('toggleNavbar called');
+    this.isNavbarVisible = !this.isNavbarVisible;
+    console.log('isNavbarVisible:', this.isNavbarVisible);
+  }
+}

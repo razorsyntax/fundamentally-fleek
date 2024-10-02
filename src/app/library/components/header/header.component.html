@@ -9,9 +9,12 @@
           alt="Fundamentally Logo"
         />
         <div class="text-logo">FUNDAMENTALLY</div>
+        <button *ngIf="isMobileScreen" (click)="toggleNavbar()">&#9776;</button>
       </div>
 
-      <ul class="nav-list">
+
+
+      <ul class="nav-list" [ngStyle]="{ display: isNavbarVisible ? 'flex' : 'none' }">
         <li>
           <a
             [routerLink]="['/']"

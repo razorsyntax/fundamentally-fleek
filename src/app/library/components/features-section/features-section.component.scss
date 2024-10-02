@@ -1,27 +1,27 @@
 section.features {
-  width: 1200px;
+  width: 100%;
   margin: auto;
   color: #ffffff;
   background-color: #ffffff05;
   text-align: center;
   .container {
-    width: 1000px;
+    width: 100%;
     margin: auto;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    margin-top: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 3rem;
     h2 {
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: 700;
       color: #9c27b0;
-      margin-bottom: 5rem;
+      margin-bottom: 3rem;
     }
     ul {
       li {
         list-style-type: none;
-        margin: 3rem;
-        padding: 3rem;
-        width: 800px;
+        margin: 2rem;
+        padding: 2rem;
+        width: 80%;
         border: 2px dotted #9c27b0;
         border-radius: 10px;
         .list-item {
@@ -36,11 +36,32 @@ section.features {
           }
         }
         p {
-          font-size: 2rem;
+          font-size: 1.5rem;
           color: #fff;
           margin-left: 2rem;
         }
       }
     }
+  }
+}
+
+// Mobile Styles
+@media (max-width: 768px) {
+  section.features .container ul li {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  section.features .container ul li .list-item {
+    flex-direction: column;
+  }
+
+  section.features .container ul li .list-item h3 {
+    margin-left: 0;
+  }
+
+  section.features .container ul li p {
+    font-size: 1rem;
+    margin-left: 0;
   }
 }

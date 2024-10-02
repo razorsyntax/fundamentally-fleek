@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
-
 // Header Styles
 header {
   position: fixed;
@@ -63,4 +61,53 @@ header nav a:hover {
   font-size: 35px;
   padding-top: 0.5rem;
   padding-left: 1rem;
+}
+
+// Mobile Styles
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.2392156863);
+  }
+
+  .nav-list.visible {
+    display: flex;
+  }
+
+  header nav li {
+    margin: 1rem 0;
+  }
+
+  header nav a {
+    font-size: 1.5rem;
+  }
+
+  .logo-container {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .text-logo {
+    font-size: 25px;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+  }
 }

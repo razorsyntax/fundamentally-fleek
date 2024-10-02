@@ -35,3 +35,20 @@
   }
 }
 
+// Mobile Styles
+@media (max-width: 768px) {
+  .hero {
+    height: 500px;
+    width: 80%;
+    padding: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+}
