@@ -1,17 +1,17 @@
 section.features {
-  width: 100%;
+  width: 1200px;
   margin: auto;
   color: #ffffff;
   background-color: #ffffff05;
   text-align: center;
   .container {
-    width: 100%;
+    width: 1000px;
     margin: auto;
     padding-top: 3rem;
     padding-bottom: 3rem;
     margin-top: 3rem;
     h2 {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 700;
       color: #9c27b0;
       margin-bottom: 3rem;
@@ -36,7 +36,7 @@ section.features {
           }
         }
         p {
-          font-size: 1.5rem;
+          font-size: 2rem;
           color: #fff;
           margin-left: 2rem;
         }
@@ -47,6 +47,14 @@ section.features {
 
 // Mobile Styles
 @media (max-width: 768px) {
+  section.features {
+    width: 100% !important;
+ .container {
+    width: 100% !important;
+  }
+
+  }
+
   section.features .container ul li {
     padding: 1rem;
     margin: 1rem;

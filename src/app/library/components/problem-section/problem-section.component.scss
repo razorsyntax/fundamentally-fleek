@@ -1,6 +1,6 @@
 section.section-background {
   .problem-container {
-    width: 100%;
+    width: 1200px;
     margin: auto;
     .container {
       font-size: 18px;
@@ -36,15 +36,19 @@ section.section-background {
   .asset-img {
     border: 1px solid white;
     border-radius: 10px;
-    width: 100%;
+    width: 80%;
   }
 }
 
 // Mobile Styles
 @media (max-width: 768px) {
-  .problem-container .container {
-    padding: 1rem;
-    margin-top: 1rem;
+  .problem-container {
+    width: 80% !important;
+    margin: auto;
+    .container {
+      padding: 1rem;
+      margin-top: 1rem;
+    }
   }
 
   .problem-container .container .title h2 {

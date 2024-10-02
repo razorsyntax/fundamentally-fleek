@@ -61,12 +61,13 @@ header nav a:hover {
   font-size: 35px;
   padding-top: 0.5rem;
   padding-left: 1rem;
+  font-weight: 100;
 }
 
 // Mobile Styles
 @media (max-width: 768px) {
   header .container {
-    flex-direction: column;
+
     height: auto;
   }
 
