@@ -1,25 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../library/components/header/header.component';
-import { HeroSectionComponent } from '../library/components/hero-section/hero-section.component';
-import { ProblemSectionComponent } from "../library/components/problem-section/problem-section.component";
-import { FeaturesSectionComponent } from "../library/components/features-section/features-section.component";
 import { HttpClient } from '@angular/common/http';
+import { HeroComponent } from '../library/components/hero/hero.component';
+import { ValuePropositionComponent } from '../library/components/value-proposition/value-proposition.component';
+import { FeatureShowcaseComponent } from '../library/components/feature-showcase/feature-showcase.component';
+import { VideoDemoComponent } from '../library/components/video-demo/video-demo.component';
+import { PricingComponent } from '../library/components/pricing/pricing.component';
+import { FinalCtaComponent } from '../library/components/final-cta/final-cta.component';
+import { FooterComponent } from '../library/components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  imports: [HeaderComponent, HeroSectionComponent, ProblemSectionComponent, FeaturesSectionComponent]
+  imports: [
+    HeroComponent,
+    ValuePropositionComponent,
+    FeatureShowcaseComponent,
+    VideoDemoComponent,
+    PricingComponent,
+    FinalCtaComponent,
+    HeaderComponent,
+    FooterComponent,
+  ],
 })
 export class HomeComponent implements OnInit {
   pdfUrl = 'assets/documents/Fundamentally_v001_PitchPlan.pdf';
 
-  constructor(private http: HttpClient) {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   downloadPdf() {
     const link = document.createElement('a');
@@ -31,5 +42,4 @@ export class HomeComponent implements OnInit {
   viewPdf() {
     window.open(this.pdfUrl, '_blank');
   }
-
 }

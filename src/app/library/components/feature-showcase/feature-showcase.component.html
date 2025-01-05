@@ -1,0 +1,46 @@
+<section class="feature-showcase">
+  <div class="section-header">
+    <h2>Powerful Features for Informed Investing</h2>
+    <p class="subtitle">
+      Every tool you need to make confident investment decisions
+    </p>
+  </div>
+
+  <div class="features-container">
+    <div
+      *ngFor="let feature of features; let i = index"
+      class="feature-block"
+      [class.feature-block-reverse]="i % 2 !== 0"
+    >
+      <div class="feature-content">
+        <h3>{{ feature.title }}</h3>
+        <p class="feature-description">{{ feature.description }}</p>
+
+        <ul class="feature-points">
+          <li *ngFor="let point of feature.points">
+            <span class="check-icon">✓</span>
+            {{ point }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="feature-image">
+        <div class="image-placeholder">
+          <!-- Replace with actual image once available -->
+          <!-- <div class="placeholder-text">{{feature.title}} Interface</div> -->
+          <img
+            [src]="feature.image"
+            style="
+              border-radius: 12px;
+              border: 1px solid rgba(255, 255, 255, 0.168627451);
+              box-shadow: 1px 10px 22px -4px black;
+            "
+            width="600"
+            height="300"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
