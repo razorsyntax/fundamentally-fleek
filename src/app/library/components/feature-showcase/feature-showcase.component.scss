@@ -7,7 +7,34 @@
   background-image: url(/assets/images/forest-2.webp);
   background-attachment: fixed;
   background-position: center;
+}
 
+.feature-image {
+  flex: 1;
+  max-width: 100%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.image-placeholder {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.168627451);
+    box-shadow: 1px 10px 22px -4px black;
+  }
 }
 
 .section-header {
@@ -94,20 +121,4 @@
 
 .feature-image {
   flex: 1;
-}
-
-.image-placeholder {
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
-  width: 100%;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-
-  .placeholder-text {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 1.25rem;
-  }
 }
