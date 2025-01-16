@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { VideoModalComponent } from './components/video-modal/video-modal.component';
+import { VideoConfig } from './models/video.interface';
+import { VideoButtonDirective } from './directives/video-button.directive';
 
 @Component({
   selector: 'app-video-demo',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, VideoModalComponent, VideoButtonDirective],
   templateUrl: './video-demo.component.html',
-  styleUrls: ['./video-demo.component.scss']
+  styleUrls: ['./video-demo.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VideoDemoComponent {
-  playVideo() {
-    // Implement video play functionality
-    console.log('Play video');
-  }
+  videoConfig: VideoConfig = {
+    id: 'R9rwfUmJaAM',
+    platform: 'youtube',  // or 'odysee'
+    title: 'Investment Strategy Demo'
+  };
 }

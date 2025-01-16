@@ -49,7 +49,7 @@
   color: #ffffff;
   font-size: 1.1rem;
 
-  .hightlight-text {
+  .highlight-text {
     font-size: 15px;
   }
 
@@ -72,6 +72,8 @@
 
 .video-placeholder {
   background: rgba(0, 0, 0, 0.5);
+  background-image: url(/assets/images/YouTube_Template_Image.png);
+  background-size: contain;
   border-radius: 12px;
   aspect-ratio: 16/9;
   display: flex;

@@ -9,26 +9,31 @@
       <div class="video-highlights">
         <div class="highlight-item">
           <span class="highlight-icon">↗</span>
-          <span class="hightlight-text">Learn our research framework</span>
+          <span class="highlight-text">Learn our research framework</span>
         </div>
         <div class="highlight-item">
           <span class="highlight-icon">⚡</span>
-          <span class="hightlight-text">Master position sizing for optimal returns</span>
+          <span class="highlight-text">Master position sizing for optimal returns</span>
         </div>
         <div class="highlight-item">
           <span class="highlight-icon">📊</span>
-          <span class="hightlight-text">Discover portfolio optimization techniques</span>
+          <span class="highlight-text">Discover portfolio optimization techniques</span>
         </div>
       </div>
     </div>
 
     <div class="video-container">
-      <div class="video-placeholder" (click)="playVideo()">
+      <div
+        class="video-placeholder"
+        [appVideoButton]="videoConfig"
+        role="button"
+        tabindex="0">
         <div class="play-button">
           <span class="play-icon">▶</span>
-          <span class="play-text">Watch Demo</span>
+          <span class="play-text">Watch the Demo</span>
         </div>
       </div>
     </div>
   </div>
+  <app-video-modal></app-video-modal>
 </section>
