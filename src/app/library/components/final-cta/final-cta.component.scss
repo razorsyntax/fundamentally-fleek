@@ -114,3 +114,36 @@ h2 {
     margin-top: 0.5rem;
   }
 }
+
+.free-banner {
+  position: relative;
+  display: inline-block;
+}
+
+.free-offer-badge {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #18ffe3;
+  color: #0a1f23;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  white-space: nowrap;
+  animation: pulseBadge 2s infinite;
+  z-index: 1;
+}
+
+@keyframes pulseBadge {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
