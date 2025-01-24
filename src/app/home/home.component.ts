@@ -8,6 +8,7 @@ import { VideoDemoComponent } from '../library/components/video-demo/video-demo.
 import { PricingComponent } from '../library/components/pricing/pricing.component';
 import { FinalCtaComponent } from '../library/components/final-cta/final-cta.component';
 import { FooterComponent } from '../library/components/footer/footer.component';
+import { ResearchLifecycleComponent } from "../library/components/research-lifecycle/research-lifecycle.component";
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,8 @@ import { FooterComponent } from '../library/components/footer/footer.component';
     FinalCtaComponent,
     HeaderComponent,
     FooterComponent,
-  ],
+    ResearchLifecycleComponent
+],
 })
 export class HomeComponent implements OnInit {
   pdfUrl = 'assets/documents/Fundamentally_v001_PitchPlan.pdf';
