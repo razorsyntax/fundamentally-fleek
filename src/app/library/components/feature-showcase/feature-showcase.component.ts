@@ -11,9 +11,9 @@ import { CommonModule } from '@angular/common';
 export class FeatureShowcaseComponent {
   features = [
     {
-      title: 'Portfolio Management',
+      title: 'Your Portfolio\'s Control Center',
       description:
-        'Monitor, analyze, and optimize your portfolio with powerful tracking tools. Stay informed with real-time updates and comprehensive performance metrics.',
+        'See exactly what\'s working, what isn\'t, and what needs your attention. No more wondering about the health of your investments.',
       image: '/assets/images/portfolio.webp',
       points: [
         'Professional TA Tools',
@@ -22,9 +22,9 @@ export class FeatureShowcaseComponent {
       ],
     },
     {
-      title: 'Evaluation',
+      title: 'Find True Value',
       description:
-        'Take the guesswork out of position sizing. Use intelligent risk management tools to determine optimal investment amounts based on your evaluation scores.',
+        'While others chase headlines, you\'ll uncover which opportunities are worth your investment using a proven evaluation system.',
       image: '/assets/images/evaluationlist.webp',
       points: [
         'Risk-based position sizing',
@@ -33,9 +33,9 @@ export class FeatureShowcaseComponent {
       ],
     },
     {
-      title: 'Analysis Builder',
+      title: 'Turn Market Chaos Into Clear Decisions',
       description:
-        'Create custom evaluation frameworks that turn your research into quantifiable scores. Compare assets consistently and make informed decisions based on your criteria.',
+        'Answer simple questions about any crypto opportunity and get a clear score that shows its true potential. No more wondering if you\'re missing something important.',
       image: '/assets/images/analysisbuilder.webp',
       points: [
         'Custom scoring templates',
