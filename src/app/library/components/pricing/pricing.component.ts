@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UtilitiesService } from '../../services/utilities.service';
 
 @Component({
     selector: 'app-pricing',
@@ -8,6 +9,8 @@ import { CommonModule } from '@angular/common';
     styleUrls: ['./pricing.component.scss']
 })
 export class PricingComponent {
+  utilities = inject(UtilitiesService);
+  
   features = [
     'Access to all core features',
     'Analysis Builder with custom templates',

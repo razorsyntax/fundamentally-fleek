@@ -15,7 +15,7 @@
         <div class="price-comparison">
           <div class="special-price">
             <span class="price-label">Special Offer</span>
-            <span class="price-amount">$239.88</span>
+            <span class="price-amount">${{ utilities.getAnnualPrice() }}</span>
             <span class="price-period">/year</span>
             <span style="font-size: 12px; color: grey"
               >($19.99/mo, billed yearly)</span
@@ -24,7 +24,7 @@
 
           <div class="regular-price">
             <span class="price-label">Regular Price</span>
-            <span class="price-amount">$599.99</span>
+            <span class="price-amount">${{ utilities.getRegularPrice() }}</span>
             <span class="price-period">/year</span>
           </div>
         </div>
@@ -39,17 +39,13 @@
               <button class="signup-button">
                 Get Started Now
                 <span class="total-price">
-                  <span>$239.88/yr</span>
+                  <span>${{ utilities.getAnnualPrice() }}/yr</span>
                 </span>
               </button>
             </div>
           </a>
         </div>
 
-        <!-- <div class="payment-info">
-          <span class="crypto-icon">₿</span>
-          Cryptocurrency payments only
-        </div> -->
       </div>
 
       <div class="features-list">

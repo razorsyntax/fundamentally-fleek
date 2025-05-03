@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UtilitiesService } from '../../services/utilities.service';
 
 @Component({
     selector: 'app-final-cta',
@@ -8,6 +9,9 @@ import { CommonModule } from '@angular/common';
     styleUrls: ['./final-cta.component.scss']
 })
 export class FinalCtaComponent {
+  utilities = inject(UtilitiesService);
+  price = this.utilities.getAnnualPrice();
+
   scrollToSignup() {
     const element = document.getElementById('pricing');
     element?.scrollIntoView({ behavior: 'smooth' });
