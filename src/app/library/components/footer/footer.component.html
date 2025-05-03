@@ -1,56 +1,47 @@
 <footer>
   <div class="footer-container">
     <div class="socials">
-      <a href="https://x.com/fundamentally_x" target="self">
-        <i class="lni lni-x"></i>
-      </a>
-      <a href="https://t.me/+oynN_BHWKHw3YTAx" target="self">
-        <i class="lni lni-telegram"></i>
-      </a>
-      <a href="https://www.youtube.com/@fundamentallycrypto" target="self">
-        <i class="lni lni-youtube"></i>
-      </a>
-      <a
-        href="https://www.linkedin.com/company/fundamentally-crypto/"
-        target="self"
-      >
-        <i class="lni lni-linkedin"></i>
-      </a>
-      <a href="https://www.tiktok.com/@fundamentally7" target="self">
-        <i class="lni lni-tiktok"></i>
-      </a>
+      @for (social of socialLinks; track social.platform) {
+        <a [href]="social.url" target="self">
+          <i [class]="'lni ' + social.icon"></i>
+        </a>
+      }
     </div>
+    
     <p>
       🔒 We securely accept USD and over 300 cryptocurrencies with
-      <a style="color: #18ffe3" href="https://nowpayments.io/" target="self"
-        >NOWPayments</a
-      >
+      <a style="color: #18ffe3" [href]="specificLinks.nowPayments.url" target="self">
+        {{ specificLinks.nowPayments.text }}
+      </a>
     </p>
+
     <p>
-      <a style="color: #18ffe3" href="https://getmonero.org/" target="self"
-        >Monero</a
-      >
+      <a style="color: #18ffe3" [href]="specificLinks.monero.url" target="self">
+        {{ specificLinks.monero.text }}
+      </a>
       prefered.
     </p>
+
     <p>
-      <a
-        href="https://gust.com/companies/fundamentally-crypto"
-        target="self"
-        style="color: #18ffe3; cursor: pointer"
-        >As seen on the investment platform Gust</a
-      >
+      <a [href]="specificLinks.gust.url" target="self" style="color: #18ffe3; cursor: pointer">
+        {{ specificLinks.gust.text }}
+      </a>
     </p>
+
     <p>
-      &copy; 2024
-      <a style="color: #18ffe3" href="https://www.biomance.com/" target="self"
-        >Biomance Technologies, LLC</a
-      >. All Rights Reserved.
+      &copy; {{ currentYear }}
+      <a style="color: #18ffe3" [href]="specificLinks.company.url" target="self">
+        {{ specificLinks.company.text }}
+      </a>
+      . All Rights Reserved.
     </p>
+
     <nav class="footer-nav">
       <p>
-        <a [routerLink]="['/privacy-policy']" style="color: #18ffe3; cursor: pointer">Privacy Policy</a> |
-        <a [routerLink]="['/terms-and-conditions']" style="color: #18ffe3; cursor: pointer">Terms and Conditions</a> |
-        <a [routerLink]="['/refunds']" style="color: #18ffe3; cursor: pointer">Refund Policy</a>
+        @for (link of footerLinks; track link?.route; let last = $last) {
+          <a [routerLink]="[link.route]" style="color: #18ffe3; cursor: pointer">{{ link?.text }}</a>
+          @if (!last) { | }
+        }
       </p>
     </nav>
   </div>

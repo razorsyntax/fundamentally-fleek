@@ -11,21 +11,20 @@ import { FooterComponent } from '../library/components/footer/footer.component';
 import { ResearchLifecycleComponent } from "../library/components/research-lifecycle/research-lifecycle.component";
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  imports: [
-    HeroComponent,
-    ValuePropositionComponent,
-    FeatureShowcaseComponent,
-    VideoDemoComponent,
-    PricingComponent,
-    FinalCtaComponent,
-    HeaderComponent,
-    FooterComponent,
-    ResearchLifecycleComponent
-],
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    imports: [
+        HeroComponent,
+        ValuePropositionComponent,
+        FeatureShowcaseComponent,
+        VideoDemoComponent,
+        PricingComponent,
+        FinalCtaComponent,
+        HeaderComponent,
+        FooterComponent,
+        ResearchLifecycleComponent
+    ]
 })
 export class HomeComponent implements OnInit {
   pdfUrl = 'assets/documents/Fundamentally_v001_PitchPlan.pdf';

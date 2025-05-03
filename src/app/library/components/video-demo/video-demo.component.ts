@@ -5,12 +5,11 @@ import { VideoConfig } from './models/video.interface';
 import { VideoButtonDirective } from './directives/video-button.directive';
 
 @Component({
-  selector: 'app-video-demo',
-  standalone: true,
-  imports: [CommonModule, VideoModalComponent, VideoButtonDirective],
-  templateUrl: './video-demo.component.html',
-  styleUrls: ['./video-demo.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-video-demo',
+    imports: [CommonModule, VideoModalComponent, VideoButtonDirective],
+    templateUrl: './video-demo.component.html',
+    styleUrls: ['./video-demo.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VideoDemoComponent {
   videoConfig: VideoConfig = {

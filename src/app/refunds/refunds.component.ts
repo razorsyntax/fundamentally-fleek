@@ -4,11 +4,10 @@ import { HeaderComponent } from "../library/components/header/header.component";
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-refunds',
-  standalone: true,
-  imports: [CommonModule, RouterLink, HeaderComponent],
-  templateUrl: './refunds.component.html',
-  styleUrls: ['./refunds.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-refunds',
+    imports: [CommonModule, RouterLink, HeaderComponent],
+    templateUrl: './refunds.component.html',
+    styleUrls: ['./refunds.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RefundsComponent {}

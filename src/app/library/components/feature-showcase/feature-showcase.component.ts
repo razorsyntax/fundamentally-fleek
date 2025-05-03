@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-feature-showcase',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './feature-showcase.component.html',
-  styleUrls: ['./feature-showcase.component.scss'],
+    selector: 'app-feature-showcase',
+    imports: [CommonModule],
+    templateUrl: './feature-showcase.component.html',
+    styleUrls: ['./feature-showcase.component.scss']
 })
 export class FeatureShowcaseComponent {
   features = [

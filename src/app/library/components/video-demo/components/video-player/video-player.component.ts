@@ -4,12 +4,11 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { VideoConfig } from '../../models/video.interface';
 
 @Component({
-  selector: 'app-video-player',
-  standalone: true,
-  imports: [CommonModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './video-player.component.html',
-  styleUrls: ['./video-player.component.scss']
+    selector: 'app-video-player',
+    imports: [CommonModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './video-player.component.html',
+    styleUrls: ['./video-player.component.scss']
 })
 export class VideoPlayerComponent implements OnInit {
   @Input() config!: VideoConfig;
