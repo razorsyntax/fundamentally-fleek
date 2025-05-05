@@ -63,7 +63,7 @@ export class FooterComponent {
     nowPayments: { text: 'NOWPayments', type: LinkType.EXTERNAL, url: 'https://nowpayments.io/' },
     monero: { text: 'Monero', type: LinkType.EXTERNAL, url: 'https://getmonero.org/' },
     gust: { text: 'As seen on the investment platform Gust', type: LinkType.EXTERNAL, url: 'https://gust.com/companies/fundamentally-crypto' },
-    company: { text: 'Biomance Technologies, LLC', type: LinkType.EXTERNAL, url: 'https://www.biomance.com/' },
+    company: { text: 'The Aquarian, LLC', type: LinkType.EXTERNAL, url: 'https://www.aquarianmetals.com/' },
   };
 
   readonly currentYear = new Date().getFullYear();
