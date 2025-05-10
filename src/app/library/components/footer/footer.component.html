@@ -2,46 +2,58 @@
   <div class="footer-container">
     <div class="socials">
       @for (social of socialLinks; track social.platform) {
-        <a [href]="social.url" target="self">
-          <i [class]="'lni ' + social.icon"></i>
-        </a>
+      <a [href]="social.url" target="self">
+        <i [class]="'lni ' + social.icon"></i>
+      </a>
       }
     </div>
-    
-    <p>
-      🔒 We securely accept USD and over 300 cryptocurrencies with
-      <a style="color: #18ffe3" [href]="specificLinks.nowPayments.url" target="self">
-        {{ specificLinks.nowPayments.text }}
-      </a>
-    </p>
 
-    <p>
-      <a style="color: #18ffe3" [href]="specificLinks.monero.url" target="self">
+    <p style="margin-top: 4rem;">
+      🔒 We securely accept USD and over 300 cryptocurrencies with
+      <a
+        style="color: #18ffe3"
+        [href]="specificLinks.nowPayments.url"
+        target="self"
+      >
+        {{ specificLinks.nowPayments.text }}
+      </a>. <a style="color: #18ffe3" [href]="specificLinks.monero.url" target="self">
         {{ specificLinks.monero.text }}
       </a>
       prefered.
     </p>
 
-    <p>
-      <a [href]="specificLinks.gust.url" target="self" style="color: #18ffe3; cursor: pointer">
+    <p style="margin-top: 4rem;">
+      <a
+        [href]="specificLinks.gust.url"
+        target="self"
+        style="color: #18ffe3; cursor: pointer"
+      >
         {{ specificLinks.gust.text }}
       </a>
     </p>
 
-    <p>
-      &copy; {{ currentYear }}
-      <a style="color: #18ffe3" [href]="specificLinks.company.url" target="self">
-        {{ specificLinks.company.text }}
+    <div class="aquarian-metals-logo">
+      <a [href]="specificLinks.company.url" target="self" style="color: white; text-decoration: none;">
+        <div>An Aquarian Metals project</div>
+        <div>
+          <img
+            src="assets/images/Site_logo_small.png"
+            alt="Aquarian Metals"
+            style="width: 300px"
+          />
+        </div>
       </a>
-      . All Rights Reserved.
-    </p>
+    </div>
 
     <nav class="footer-nav">
       <p>
         @for (link of footerLinks; track link?.route; let last = $last) {
-          <a [routerLink]="[link.route]" style="color: #18ffe3; cursor: pointer">{{ link?.text }}</a>
-          @if (!last) { | }
-        }
+        <a
+          [routerLink]="[link.route]"
+          style="color: #18ffe3; cursor: pointer"
+          >{{ link?.text }}</a
+        >
+        @if (!last) { | } }
       </p>
     </nav>
   </div>

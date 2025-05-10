@@ -1,4 +1,11 @@
 // Header Styles
+.header-styling {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -64,10 +71,42 @@ header nav a:hover {
   font-weight: 100;
 }
 
+.aquarian-metals-logo {
+  margin-right: 3rem;
+  display: flex;
+}
+
+// Aquarian Metals Logo Styles
+.aquarian-metals-logo {
+  &__text {
+    padding-top: 5px;
+    padding-right: 5px;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+  }
+
+  &__container {
+    padding: 3px 3px 0px 3px;
+    background: #637881;
+    border-radius: 7px;
+  }
+
+  &__image {
+    width: 100px;
+    border-radius: 10px;
+  }
+}
+
 // Mobile Styles
 @media (max-width: 768px) {
-  header .container {
+  .aquarian-metals-logo {
+    display: none;
+  }
 
+  header .container {
     height: auto;
   }
 
