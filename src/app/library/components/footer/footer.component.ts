@@ -33,6 +33,7 @@ interface SpecificLinks {
   monero: FooterLink;
   gust: FooterLink;
   company: FooterLink;
+  zano: FooterLink;
 }
 
 @Component({
@@ -64,6 +65,7 @@ export class FooterComponent {
     monero: { text: 'Monero', type: LinkType.EXTERNAL, url: 'https://getmonero.org/' },
     gust: { text: 'As seen on the investment platform Gust', type: LinkType.EXTERNAL, url: 'https://gust.com/companies/fundamentally-crypto' },
     company: { text: 'The Aquarian, LLC', type: LinkType.EXTERNAL, url: 'https://www.aquarianmetals.com/' },
+    zano: { text: 'Zano', type: LinkType.EXTERNAL, url: 'https://zano.org/' },
   };
 
   readonly currentYear = new Date().getFullYear();
