@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<div class="purchase-options-container">
+
+  <div class="choose-option-header">
+    Choose the plan that’s right for you!
+  </div>
+
+  <div class="options-grid">
+    <div *ngFor="let option of purchaseOptions" class="option-card">
+      <div class="card-header">
+        <span class="card-icon" [ngClass]="{'bitcoin-icon': option.icon === '₿'}">{{option.icon}}</span>
+        <h2 class="card-title">{{option.title}}</h2>
+      </div>
+      <div class="card-content">
+        <div class="plan-price">{{ option.price }}</div>
+        <p>{{option.description}}</p>
+      </div>
+      <div class="card-actions">
+        <a class="button primary" [href]="option.link" target="_blank">
+          Select Plan
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="info-banner">
+    <span class="info-icon">ℹ️</span>
+    <p>All purchases are processed through <a style="color: #18ffe3;" href="https://www.aquarianmetals.com" target="_blank">Aquarian Metals</a>. You will receive an activation key upon successful payment.</p>
+  </div>
+  <section class="features-section">
+    <h2>All Plans Include:</h2>
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <span class="feature-icon">{{ feature.icon }}</span>
+        <span class="feature-text">{{ feature.text }}</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="activation-section">
+    <p>Already have a key?</p>
+    <a class="button accent" [href]="activationUrl" target="_blank">
+      Activate Here
+    </a>
+  </div>
+</div>

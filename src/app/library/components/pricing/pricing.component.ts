@@ -1,16 +1,17 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UtilitiesService } from '../../services/utilities.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-pricing',
-    imports: [CommonModule],
+    imports: [CommonModule, RouterModule],
     templateUrl: './pricing.component.html',
     styleUrls: ['./pricing.component.scss']
 })
 export class PricingComponent {
   utilities = inject(UtilitiesService);
-  
+  router = inject(Router);
   features = [
     'Access to all core features',
     'Analysis Builder with custom templates',
@@ -22,4 +23,8 @@ export class PricingComponent {
     'Comprehensive research tools',
     'AI-Enhanced Summary Report'
   ];
+
+  navigateToPurchaseOptions() {
+    this.router.navigate(['/purchase-options']);
+  }
 }

@@ -1,0 +1,338 @@
+:host {
+  display: block;
+}
+
+.purchase-options-container {
+  background: linear-gradient(157deg, rgb(18, 52, 58) 32%, rgb(25, 6, 31) 96%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 8rem;
+}
+
+.info-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #18181b;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.4117647059);
+  color: white;
+  box-shadow: 1px 10px 22px -4px #000;
+
+  .info-icon {
+    font-size: 2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.option-card {
+  background: #18181b;
+  border-radius: 12px;
+  box-shadow: 1px 10px 22px -4px #000;
+  padding: 1.5rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.4117647059);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .card-icon {
+      font-size: 2.5rem;
+    }
+
+    .card-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      color: #fff;
+      margin: 0;
+    }
+  }
+
+  .card-content {
+    margin-bottom: 1.5rem;
+
+    p {
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
+  .card-actions {
+    .button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.2s ease-in-out;
+
+      &.primary {
+        background: purple;
+        color: white;
+
+        &:hover {
+          background-color: #9c27b0;
+        }
+      }
+    }
+  }
+}
+
+.activation-section {
+  text-align: center;
+  padding: 2rem;
+  background: #18181b;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4117647059);
+  box-shadow: 1px 10px 22px -4px #000;
+
+  p {
+    margin: 0 0 1rem 0;
+    color: white;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+
+    &.accent {
+      background-color: #18ffe3;
+      color: black;
+
+      &:hover {
+        background-color: purple;
+        color: white;
+      }
+    }
+  }
+}
+
+.features-section {
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.41);
+  border-radius: 16px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin: 2.5rem 0 3rem 0;
+  box-shadow: 1px 10px 22px -4px #000;
+  backdrop-filter: blur(8px);
+
+  h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: #fff;
+    border-left: 4px solid #a259ff;
+    padding-left: 0.75rem;
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 8px rgba(120, 60, 255, 0.10);
+  }
+
+  .features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .feature-card {
+    background: rgba(34, 34, 40, 0.92);
+    border-radius: 14px;
+    box-shadow: 0 4px 24px 0 rgba(120, 60, 255, 0.10), 0 1.5px 8px 0 rgba(0, 0, 0, 0.18);
+    border: 1.5px solid rgba(120, 60, 255, 0.18);
+    min-width: 220px;
+    max-width: 320px;
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    transition: transform 0.18s cubic-bezier(.4, 2, .6, 1), box-shadow 0.18s;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 8px 32px 0 #a259ff55, 0 1.5px 8px 0 rgba(0, 0, 0, 0.18);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #a259ff 0%, purple 60%, #fff 100%);
+      border-radius: 50%;
+      padding: 0.7rem;
+      color: #fff;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 0 8px #a259ff55);
+
+      &:hover {
+        box-shadow: 0 0 32px 0 #a259ff99;
+        transform: scale(1.15) rotate(-8deg);
+      }
+    }
+
+    .feature-text {
+      font-size: 1.8rem;
+      color: #e0e7ef;
+      font-weight: 600;
+      line-height: 1.6;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.plan-price {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #18ffe3;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 8px rgba(120, 60, 255, 0.10);
+}
+
+.bitcoin-icon {
+  color: #f7931a !important;
+  text-shadow: 0 0 12px #f7931a88, 0 2px 8px #000;
+  filter: drop-shadow(0 0 8px #f7931a55);
+}
+
+.choose-option-header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 8px rgba(120, 60, 255, 0.10);
+}
+
+@media (max-width: 900px) {
+  .features-section .features-grid {
+    gap: 1.25rem;
+  }
+
+  .features-section .feature-card {
+    min-width: 180px;
+    padding: 1.1rem 0.5rem;
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .purchase-options-container {
+    padding: 0.5rem;
+    margin-top: 10rem;
+    min-height: unset;
+  }
+
+  .info-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    font-size: 0.98rem;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .option-card {
+    padding: 1rem;
+    .card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      .card-title {
+        font-size: 1.2rem;
+      }
+    }
+    .card-content {
+      margin-bottom: 1rem;
+      p {
+        font-size: 0.98rem;
+      }
+    }
+    .card-actions {
+      .button {
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem 0;
+      }
+    }
+  }
+
+  .activation-section {
+    padding: 1rem 0.5rem;
+    p {
+      font-size: 0.98rem;
+    }
+    .button {
+      width: 100%;
+      padding: 0.7rem 0;
+    }
+  }
+
+  .features-section {
+    padding: 1.25rem 0.5rem 1rem 0.5rem;
+    margin: 1.5rem 0 2rem 0;
+
+    h2 {
+      font-size: 1.08rem;
+      padding-left: 0.5rem;
+    }
+
+    .features-grid {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .feature-card {
+      min-width: 0;
+      max-width: 100%;
+      padding: 1rem 0.5rem;
+    }
+  }
+
+  .choose-option-header {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+}

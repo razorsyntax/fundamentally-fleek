@@ -13,18 +13,14 @@
       </p>
 
       <div class="hero-cta">
-        <a href="https://crypto.fundamentally.app/" target="self">
           <div class="price-banner">
-            <!-- <div class="free-badge">Free for a Limited Time!</div> -->
-            <button class="primary-button">
+            <button class="primary-button" (click)="navigateToPurchaseOptions()">
               Get Started Now
               <span class="button-subtitle">
-                <span>${{ price }}/yr</span>
-                Limited Time Offer
+                <span>${{ price }}/mo</span>
               </span>
             </button>
           </div>
-        </a>
       </div>
 
       <div class="hero-features">
