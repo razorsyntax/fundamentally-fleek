@@ -150,3 +150,25 @@ header nav a:hover {
     cursor: pointer;
   }
 }
+
+.header-right-wrapper {
+  display: flex;
+  align-items: center;
+
+  .login-container {
+    margin-bottom: 3px;
+
+    .login-link {
+      color: white;
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-right: 3rem;
+
+      &:hover {
+        color: #18ffe3;
+      }
+    }
+  }
+}
