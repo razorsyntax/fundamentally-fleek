@@ -3,7 +3,6 @@
 }
 
 .purchase-options-container {
-  background: linear-gradient(157deg, rgb(18, 52, 58) 32%, rgb(25, 6, 31) 96%);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -65,7 +64,7 @@
     }
 
     .card-title {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 800;
       letter-spacing: 0.01em;
       color: #fff;
@@ -105,11 +104,12 @@
 
 .activation-section {
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   background: #18181b;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.4117647059);
   box-shadow: 1px 10px 22px -4px #000;
+  width: 150px;
 
   p {
     margin: 0 0 1rem 0;
@@ -239,6 +239,7 @@
   margin-bottom: 2rem;
   letter-spacing: 0.01em;
   text-shadow: 0 2px 8px rgba(120, 60, 255, 0.10);
+  margin-top: 2rem;
 }
 
 @media (max-width: 900px) {
@@ -276,20 +277,25 @@
 
   .option-card {
     padding: 1rem;
+
     .card-header {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.5rem;
+
       .card-title {
         font-size: 1.2rem;
       }
     }
+
     .card-content {
       margin-bottom: 1rem;
+
       p {
         font-size: 0.98rem;
       }
     }
+
     .card-actions {
       .button {
         width: 100%;
@@ -301,9 +307,11 @@
 
   .activation-section {
     padding: 1rem 0.5rem;
+
     p {
       font-size: 0.98rem;
     }
+
     .button {
       width: 100%;
       padding: 0.7rem 0;
@@ -335,4 +343,10 @@
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
+}
+
+.activation-section-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
