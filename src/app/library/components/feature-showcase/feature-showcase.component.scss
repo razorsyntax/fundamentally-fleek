@@ -11,10 +11,11 @@
 
 .feature-image {
   flex: 1;
-  max-width: 100%;
+  max-width: 450px;
+  width: 100%;
 
   @media (max-width: 768px) {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -22,15 +23,17 @@
   background: rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   width: 100%;
-  height: auto;
+  aspect-ratio: 2/1;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.168627451);
     box-shadow: 1px 10px 22px -4px black;
