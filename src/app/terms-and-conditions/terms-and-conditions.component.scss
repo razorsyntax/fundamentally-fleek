@@ -1,5 +1,135 @@
+:host {
+  display: block;
+  background: linear-gradient(#000000a1, #0000009c),
+    url(/assets/images/forest-4.webp);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-bottom: 2px solid white;
+}
+
 .terms-and-conditions {
-  padding-top: 20rem;
-  width: 800px;
-  margin: auto;
+  padding: 12rem 2rem 6rem;
+  min-height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    background: #18181b;
+    border-radius: 16px;
+    padding: 4rem 3rem;
+    box-shadow: 1px 10px 22px -4px black;
+    border: 1px solid rgba(255, 255, 255, 0.4117647059);
+
+    a {
+      color: #18ffe3;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #00e6c3;
+      }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      h1 {
+        font-size: 6rem;
+        color: #18ffe3;
+        margin: 0;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.7rem;
+        color: #ffffff;
+        opacity: 0.9;
+        margin: 0;
+      }
+    }
+
+    nav {
+      text-align: left;
+      margin-bottom: 2rem;
+
+      h2 {
+        font-size: 1.7rem;
+        margin: 0;
+
+        a {
+          color: white;
+          text-decoration: none;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: #18ffe3;
+          }
+        }
+      }
+    }
+
+    section {
+      text-align: left;
+      margin-bottom: 3rem;
+
+      h2 {
+        font-size: 2.5rem;
+        color: #ffffff;
+        margin: 0 0 2rem;
+        font-weight: 600;
+        font-family: 'Lato';
+      }
+
+      h3 {
+        font-size: 2rem;
+        color: #ffffff;
+        margin: 0 0 1.5rem;
+        font-weight: 600;
+        font-family: 'Lato';
+      }
+
+      p {
+        font-size: 1.7rem;
+        color: #ffffff;
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+      }
+
+      ul, ol {
+        font-size: 1.7rem;
+        color: #ffffff;
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+        padding-left: 2rem;
+
+        li {
+          margin-bottom: 1rem;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    footer {
+      text-align: left;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+      p {
+        font-size: 1.7rem;
+        color: #ffffff;
+        opacity: 0.9;
+        margin: 0;
+      }
+    }
+  }
 }

@@ -1,8 +1,6 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { ScreenSizeService } from 'src/app/screen-size.service';
 
 @Component({
     selector: 'app-header',
@@ -14,60 +12,40 @@ import { ScreenSizeService } from 'src/app/screen-size.service';
     styleUrls: ['./header.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit, OnDestroy {
-  isNavbarVisible = false;
-  isMobileScreen: boolean = false;
-  private screenSizeSubscription!: Subscription;
+export class HeaderComponent implements OnInit {
+    isNavbarVisible = true;
 
-  constructor(
-    private route: ActivatedRoute,
-    private viewportScroller: ViewportScroller,
-    private screenSizeService: ScreenSizeService
-  ) {}
+    constructor(
+        private route: ActivatedRoute,
+        private viewportScroller: ViewportScroller
+    ) {}
 
-  ngOnInit() {
-    this.isMobileScreen = this.screenSizeService.isMobileScreen;
-    if(!this.isMobileScreen) {
-      this.isNavbarVisible = true;
+    ngOnInit() {
+        this.route.fragment.subscribe(() => {
+            this.scrollToFragment();
+        });
     }
-    this.screenSizeSubscription = this.screenSizeService.isMobileScreenChange.subscribe((isMobileScreen) => {
-      this.isMobileScreen = isMobileScreen;
-      if(!this.isMobileScreen) {
-        this.isNavbarVisible = true;
-      }
 
-    });
-    this.route.fragment.subscribe(() => {
-      this.scrollToFragment();
-    });
-  }
-
-  ngOnDestroy() {
-    this.screenSizeSubscription.unsubscribe();
-  }
-
-  onLinkClick(event: Event, fragment: string) {
-    event.preventDefault();
-    this.viewportScroller.scrollToAnchor(fragment);
-    this.closeNavbar();
-  }
-
-  private scrollToFragment() {
-    const fragment = this.route.snapshot.fragment;
-    if (fragment) {
-      this.viewportScroller.scrollToAnchor(fragment);
-    } else {
-      this.viewportScroller.scrollToPosition([0, 0]);
+    onLinkClick(event: Event, fragment: string) {
+        event.preventDefault();
+        this.viewportScroller.scrollToAnchor(fragment);
+        this.closeNavbar();
     }
-  }
 
-  closeNavbar() {
-    this.isNavbarVisible = false;
-  }
+    private scrollToFragment() {
+        const fragment = this.route.snapshot.fragment;
+        if (fragment) {
+            this.viewportScroller.scrollToAnchor(fragment);
+        } else {
+            this.viewportScroller.scrollToPosition([0, 0]);
+        }
+    }
 
-  toggleNavbar() {
-    console.log('toggleNavbar called');
-    this.isNavbarVisible = !this.isNavbarVisible;
-    console.log('isNavbarVisible:', this.isNavbarVisible);
-  }
+    closeNavbar() {
+        this.isNavbarVisible = false;
+    }
+
+    toggleNavbar() {
+        this.isNavbarVisible = !this.isNavbarVisible;
+    }
 }

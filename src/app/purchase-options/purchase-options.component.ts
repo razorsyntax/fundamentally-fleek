@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../library/components/header/header.component';
+import { FooterComponent } from '../library/components/footer/footer.component';
 
 @Component({
   selector: 'app-purchase-options',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeaderComponent],
+  imports: [CommonModule, RouterModule, HeaderComponent, FooterComponent],
   templateUrl: './purchase-options.component.html',
   styleUrls: ['./purchase-options.component.scss']
 })

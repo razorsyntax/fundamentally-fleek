@@ -1,88 +1,94 @@
 <app-header></app-header>
 
-<div class="activation-section-container" aria-labelledby="activation-title">
-	<div class="activation-section">
-		<h2 id="activation-title" class="visually-hidden" style="margin-top: 0;">Activation</h2>
-		<p>Already have a key?</p>
-		<a 
-			class="button accent" 
-			[href]="activationUrl" 
-			target="_blank"
-			aria-label="Activate your Fundamentally subscription"
-		>
-			Activate Here
-		</a>
-	</div>
-</div>
+<main>
+	<section class="activation-section-container" aria-labelledby="activation-title">
+		<div class="activation-section">
+			<h2 id="activation-title" class="visually-hidden">Activation Options</h2>
+			<p>Already have a key?</p>
+			<a 
+				class="button accent" 
+				[href]="activationUrl" 
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Activate your Fundamentally subscription"
+			>
+				Activate Here
+			</a>
+		</div>
+	</section>
 
-<div class="purchase-options-section">
-	<div class="content-wrapper">
-		<div class="error-card">
-			<h1>Purchase Options</h1>
-			<h2>Choose Your Plan</h2>
+	<section class="purchase-options-section" aria-labelledby="purchase-options-title">
+		<div class="content-wrapper">
+			<div class="error-card">
+				<h1 id="purchase-options-title">Purchase Options</h1>
+				<h2>Choose Your Plan</h2>
 
-			<div class="options-grid" role="list">
-				@for (option of purchaseOptions; track option.title) {
-				<article class="option-card" role="listitem">
-					<div class="card-header">
-						<span
-							class="card-icon"
-							[ngClass]="{ 'bitcoin-icon': option.icon === '₿' }"
-							aria-hidden="true"
-							>{{ option.icon }}</span
-						>
-						<h3 class="card-title">{{ option.title }}</h3>
-					</div>
-					<div class="card-content">
-						<div class="plan-price">{{ option.price }}</div>
-						<p>{{ option.description }}</p>
-					</div>
-					<div class="card-actions">
-						<a 
-							class="button primary" 
-							[href]="option.link" 
-							target="_blank"
-							[attr.aria-label]="'Select ' + option.title + ' plan'"
-						>
-							Select Plan
-						</a>
-					</div>
-				</article>
-				}
-			</div>
-
-			<section class="info-section" aria-labelledby="info-title">
-				<h2 id="info-title" class="visually-hidden">Payment Information</h2>
-				<div class="info-banner">
-					<span class="info-icon" aria-hidden="true">ℹ️</span>
-					<p>
-						All purchases are processed through
-						<a
-							href="https://www.aquarianmetals.com"
-							target="_blank"
-							aria-label="Visit Aquarian Metals payment processor"
-							>Aquarian Metals</a
-						>. You will receive an activation key upon successful payment.
-					</p>
-				</div>
-			</section>
-
-			<section class="features-section" aria-labelledby="features-title">
-				<h2 id="features-title">All Plans Include:</h2>
-				<div class="features-grid" role="list">
-					@for (feature of features; track feature.text) {
-					<article class="feature-item" role="listitem">
-						<span class="feature-icon" aria-hidden="true">{{ feature.icon }}</span>
-						<span class="feature-text">{{ feature.text }}</span>
+				<div class="options-grid" role="list" aria-label="Available subscription plans">
+					@for (option of purchaseOptions; track option.title) {
+					<article class="option-card" role="listitem">
+						<header class="card-header">
+							<span
+								class="card-icon"
+								[ngClass]="{ 'bitcoin-icon': option.icon === '₿' }"
+								aria-hidden="true"
+								>{{ option.icon }}</span
+							>
+							<h3 class="card-title">{{ option.title }}</h3>
+						</header>
+						<div class="card-content">
+							<div class="plan-price">{{ option.price }}</div>
+							<p>{{ option.description }}</p>
+						</div>
+						<footer class="card-actions">
+							<a 
+								class="button primary" 
+								[href]="option.link" 
+								target="_blank"
+								rel="noopener noreferrer"
+								[attr.aria-label]="'Select ' + option.title + ' plan for ' + option.price"
+							>
+								Select Plan
+							</a>
+						</footer>
 					</article>
 					}
 				</div>
-			</section>
 
-			<div class="error-actions">
-				<a routerLink="/" class="primary-button">Return Home</a>
+				<section class="info-section" aria-labelledby="info-title">
+					<h2 id="info-title" class="visually-hidden">Payment Information</h2>
+					<div class="info-banner" role="complementary">
+						<span class="info-icon" aria-hidden="true">ℹ️</span>
+						<p>
+							All purchases are processed through
+							<a
+								href="https://www.aquarianmetals.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Visit Aquarian Metals payment processor (opens in new tab)"
+								>Aquarian Metals</a
+							>. You will receive an activation key upon successful payment.
+						</p>
+					</div>
+				</section>
+
+				<section class="features-section" aria-labelledby="features-title">
+					<h2 id="features-title">All Plans Include:</h2>
+					<div class="features-grid" role="list" aria-label="Features included in all plans">
+						@for (feature of features; track feature.text) {
+						<article class="feature-item" role="listitem">
+							<span class="feature-icon" aria-hidden="true">{{ feature.icon }}</span>
+							<span class="feature-text">{{ feature.text }}</span>
+						</article>
+						}
+					</div>
+				</section>
+
+				<nav class="error-actions" aria-label="Navigation options">
+					<a routerLink="/" class="primary-button" aria-label="Return to home page">Return Home</a>
+				</nav>
 			</div>
 		</div>
-	</div>
-</div>
+	</section>
+</main>
 
+<app-footer></app-footer>
