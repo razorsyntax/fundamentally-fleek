@@ -341,5 +341,19 @@
   <body class="lato-font lineicons-font">
     <app-root></app-root>
     <noscript>Please enable JavaScript to continue using this application.</noscript>
-</body>
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/ngsw-worker.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(error => {
+              console.error('ServiceWorker registration failed: ', error);
+            });
+        });
+      }
+    </script>
+  </body>
 </html>
