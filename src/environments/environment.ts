@@ -2,7 +2,12 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
+interface Environment {
+	production: boolean;
+	csp: string;
+}
+
+export const environment: Environment = {
 	production: false,
 	csp: `default-src 'self';
 		connect-src 'self' http://localhost:3000 http://localhost:4200 ws: wss: blob:

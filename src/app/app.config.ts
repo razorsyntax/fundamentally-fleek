@@ -1,12 +1,27 @@
-import { ApplicationConfig, ErrorHandler, isDevMode } from '@angular/core';
+import { ApplicationConfig, ErrorHandler, isDevMode, Provider } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
-import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { ErrorHandlerService } from './core/services/error-handler.service';
-import { provideServiceWorker } from '@angular/service-worker';
+
+import { routes } from './app.routes';
+
+const serviceWorkerProvider: Provider = {
+	provide: 'SERVICE_WORKER',
+	useFactory: () => {
+		if (isDevMode()) {
+			return null;
+		}
+		// @ts-ignore
+		return import('@angular/service-worker').then(({ provideServiceWorker }) => 
+			provideServiceWorker('ngsw-worker.js', { 
+				enabled: true, 
+				registrationStrategy: 'registerWhenStable:30000' 
+			})
+		);
+	}
+};
 
 export const appConfig: ApplicationConfig = {
 	providers: [
@@ -14,9 +29,7 @@ export const appConfig: ApplicationConfig = {
 		provideClientHydration(),
 		provideHttpClient(withFetch()),
 		provideAnimations(),
-		{ provide: ErrorHandler, useClass: ErrorHandlerService }, provideServiceWorker('ngsw-worker.js', {
-            enabled: !isDevMode(),
-            registrationStrategy: 'registerWhenStable:30000'
-          })
+		{ provide: ErrorHandler, useClass: ErrorHandlerService },
+		serviceWorkerProvider
 	]
 };
