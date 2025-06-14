@@ -1,0 +1,5 @@
+# Security Policy for FUNDAMENTALLY
+Contact: fundamentally.xyz@proton.me
+Policy: https://www.fundamentally.xyz/privacy-policy
+Preferred-Languages: en
+Canonical: https://www.fundamentally.xyz/.well-known/security.txt 

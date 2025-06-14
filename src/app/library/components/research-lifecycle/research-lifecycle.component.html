@@ -1,12 +1,18 @@
-<section class="lifecycle-section" id="lifecycle">
+<section class="lifecycle-section" id="lifecycle" aria-labelledby="lifecycle-title">
   <div class="content-wrapper">
     <div class="section-header">
-      <h2><span class="montserrat-font">FUNDAMENTALLY</span> is your end-to-end solution for crypto investing.</h2>
+      <h2 id="lifecycle-title"><span class="montserrat-font">FUNDAMENTALLY</span> is your end-to-end solution for crypto investing.</h2>
 
       <div class="lifecycle-container">
-        <div class="lifecycle-img">
-          <img src="/assets/images/investmentlifecycle.webp" width="350" alt="" class="The investment lifecycle has three components: Research, Risk Management, and Trading Actions"  loading="lazy" />
-        </div>
+        <figure class="lifecycle-img">
+          <img 
+            src="/assets/images/investmentlifecycle.webp" 
+            width="350" 
+            alt="Investment lifecycle diagram showing Research, Risk Management, and Trading Actions phases" 
+            loading="lazy" 
+          />
+          <figcaption class="visually-hidden">The investment lifecycle has three components: Research, Risk Management, and Trading Actions</figcaption>
+        </figure>
         <div class="lifecycle-text">
           <span class="montserrat-font">FUNDAMENTALLY</span> provides you with all the tools you need to master the entire investment lifecycle.
         </div>
@@ -14,3 +20,17 @@
     </div>
   </div>
 </section>
+
+<style>
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>

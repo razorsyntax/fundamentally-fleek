@@ -1,0 +1,15 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.fundamentally.xyz/sitemap.xml
+
+# Allow important public pages
+Allow: /terms-and-conditions
+Allow: /privacy-policy
+Allow: /refunds
+Allow: /purchase-options
+
+# Crawl delay to prevent server overload
+Crawl-delay: 10 

@@ -1,47 +1,49 @@
-<section class="final-cta">
+<section class="final-cta" aria-labelledby="final-cta-title">
   <div class="content-wrapper">
     <div class="cta-content">
-      <h2>Ready to Transform Your Investment Strategy?</h2>
+      <h2 id="final-cta-title">Ready to Transform Your Investment Strategy?</h2>
       <p class="subtitle">
         Join investors who are making confident, data-driven decisions with
         <span class="montserrat-font">FUNDAMENTALLY</span>
       </p>
 
-      <div class="benefits">
-        <div class="benefit">
-          <div class="benefit-icon">📊</div>
+      <div class="benefits" role="list">
+        <article class="benefit" role="listitem">
+          <div class="benefit-icon" aria-hidden="true">📊</div>
           <div class="benefit-text">
             <h3>Spot Life-Changing Opportunities</h3>
             <p>Turn scattered information into actionable insights</p>
           </div>
-        </div>
+        </article>
 
-        <div class="benefit">
-          <div class="benefit-icon">⚡</div>
+        <article class="benefit" role="listitem">
+          <div class="benefit-icon" aria-hidden="true">⚡</div>
           <div class="benefit-text">
             <h3>Turn Noise Into Profits</h3>
             <p>Make smarter position sizing decisions</p>
           </div>
-        </div>
+        </article>
 
-        <div class="benefit">
-          <div class="benefit-icon">🎯</div>
+        <article class="benefit" role="listitem">
+          <div class="benefit-icon" aria-hidden="true">🎯</div>
           <div class="benefit-text">
             <h3>Invest with Confidence</h3>
             <p>Use data-driven analysis for better returns</p>
           </div>
-        </div>
+        </article>
       </div>
 
       <div class="cta-buttons">
           <div class="free-banner">
             <!-- <div class="free-offer-badge">Free for a Limited Time!</div> -->
-            <button class="primary-button" (click)="navigateToPurchaseOptions()">
+            <button 
+              class="primary-button" 
+              (click)="navigateToPurchaseOptions()"
+              [attr.aria-label]="getAriaLabel()"
+            >
               Get Started Now
               <span class="price-tag">
-                <span style="color: #18ffe3;"
-                  >${{ price }}/month</span
-                >
+                <span style="color: #18ffe3;">${{ price }}/month</span>
               </span>
             </button>
           </div>

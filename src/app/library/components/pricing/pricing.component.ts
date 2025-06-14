@@ -27,4 +27,8 @@ export class PricingComponent {
   navigateToPurchaseOptions() {
     this.router.navigate(['/purchase-options']);
   }
+
+  public getAriaLabel(): string {
+    return `Get Started Now for $${this.utilities.getMonthlyPrice()}/month`;
+  }
 }

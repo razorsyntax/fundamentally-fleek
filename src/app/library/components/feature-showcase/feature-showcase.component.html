@@ -1,23 +1,24 @@
-<section class="feature-showcase">
+<section class="feature-showcase" aria-labelledby="feature-showcase-title">
   <div class="section-header">
-    <h2>Your Unfair Advantage in Crypto</h2>
+    <h2 id="feature-showcase-title">Your Unfair Advantage in Crypto</h2>
     <p class="subtitle">Every tool you need to get the investment edge</p>
   </div>
 
-  <div class="features-container">
-    <div
+  <div class="features-container" role="list">
+    <article
       *ngFor="let feature of features; let i = index"
       class="feature-block"
       [class.feature-block-reverse]="i % 2 !== 0"
+      role="listitem"
     >
       <div class="feature-content">
         <h3>{{ feature.title }}</h3>
         <p class="feature-description">{{ feature.description }}</p>
 
-        <ul class="feature-points">
-          <li *ngFor="let point of feature.points">
-            <span class="check-icon">✓</span>
-            {{ point }}
+        <ul class="feature-points" role="list">
+          <li *ngFor="let point of feature.points" role="listitem">
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>{{ point }}</span>
           </li>
         </ul>
       </div>
@@ -34,6 +35,6 @@
           />
         </div>
       </div>
-    </div>
+    </article>
   </div>
 </section>
