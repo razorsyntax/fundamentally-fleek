@@ -1,0 +1,96 @@
+.error-section {
+	padding: 6rem 2rem;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(#000000a1, #0000009c),
+		url(/assets/images/forest-1.webp);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	border-bottom: 2px solid white;
+}
+
+.content-wrapper {
+	max-width: 600px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.error-card {
+	background: #18181b;
+	border-radius: 16px;
+	padding: 4rem 3rem;
+	text-align: center;
+	box-shadow: 1px 10px 22px -4px black;
+	border: 1px solid rgba(255, 255, 255, 0.4117647059);
+
+	h1 {
+		font-size: 6rem;
+		color: #18ffe3;
+		margin: 0;
+		font-weight: 700;
+		line-height: 1;
+		margin-bottom: 1rem;
+	}
+
+	h2 {
+		font-size: 2.5rem;
+		color: #ffffff;
+		margin: 0 0 2rem;
+		font-weight: 600;
+		font-family: 'Lato';
+	}
+
+	p {
+		font-size: 1.7rem;
+		color: #ffffff;
+		opacity: 0.9;
+		margin-bottom: 3rem;
+		line-height: 1.5;
+	}
+}
+
+.error-actions {
+	.primary-button {
+		background: #9c27b0;
+		color: white;
+		border: none;
+		padding: 1.5rem 3rem;
+		border-radius: 8px;
+		font-size: 1.7rem;
+		font-weight: 500;
+		cursor: pointer;
+		text-decoration: none;
+		display: inline-block;
+		transition: all 0.2s ease;
+
+		&:hover {
+			background: #7b1fa2;
+			transform: translateY(-2px);
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.error-section {
+		padding: 4rem 1rem;
+	}
+
+	.error-card {
+		padding: 3rem 2rem;
+
+		h1 {
+			font-size: 4rem;
+		}
+
+		h2 {
+			font-size: 2rem;
+		}
+
+		p {
+			font-size: 1.5rem;
+		}
+	}
+} 

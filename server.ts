@@ -17,17 +17,47 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
-  // Serve static files from /browser
-  server.get('**', express.static(browserDistFolder, {
+  // Add security headers middleware
+  server.use((req, res, next) => {
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    res.setHeader('Permissions-Policy', 'interest-cohort=()');
+    next();
+  });
+
+  // Serve manifest file with correct content type - MUST be before catch-all routes
+  server.get('/assets/site.webmanifest', (req, res, next) => {
+    const manifestPath = join(browserDistFolder, 'assets/site.webmanifest');
+    res.setHeader('Content-Type', 'application/manifest+json');
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.sendFile(manifestPath, (err) => {
+      if (err) {
+        console.error('Error serving manifest:', err);
+        next(err);
+      }
+    });
+  });
+
+  // Serve static files from /browser - MUST be before Angular routes
+  server.use(express.static(browserDistFolder, {
     maxAge: '1y',
-    index: 'index.html',
+    index: false, // Don't serve index.html for directory requests
+    setHeaders: (res, path) => {
+      if (path.endsWith('.webmanifest')) {
+        res.setHeader('Content-Type', 'application/manifest+json');
+      }
+    }
   }));
 
-  // All regular routes use the Angular engine
-  server.get('**', (req, res, next) => {
+  // All other routes use the Angular engine
+  server.get('*', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
+
+    // Skip Angular routing for manifest
+    if (originalUrl === '/site.webmanifest') {
+      return next();
+    }
 
     commonEngine
       .render({

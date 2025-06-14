@@ -1,58 +1,86 @@
-<footer>
+<footer role="contentinfo">
   <div class="footer-container">
-    <div class="socials">
+    <nav class="socials" aria-label="Social media links">
       @for (social of socialLinks; track social.platform) {
-      <a [href]="social.url" target="self">
-        <i [class]="'lni ' + social.icon"></i>
+      <a
+        [href]="social.url"
+        target="self"
+        [attr.aria-label]="'Visit our ' + social.platform + ' page'"
+      >
+        <i [class]="'lni ' + social.icon" aria-hidden="true"></i>
       </a>
       }
-    </div>
+    </nav>
 
-    <p style="margin-top: 4rem;">
+    <p style="margin-top: 4rem">
       🔒 We securely accept USD and over 300 cryptocurrencies with
       <a
         style="color: #18ffe3"
         [href]="specificLinks.nowPayments.url"
         target="self"
+        aria-label="Learn more about our payment processor"
       >
-        {{ specificLinks.nowPayments.text }}
-      </a>. <a style="color: #18ffe3" [href]="specificLinks.monero.url" target="self">
-        {{ specificLinks.monero.text }}
-      </a>&nbsp;and&nbsp;<a style="color: #18ffe3" [href]="specificLinks.zano.url" target="self">
+        {{ specificLinks.nowPayments.text }} </a
+      >.
+      <a
+        style="color: #18ffe3"
+        [href]="specificLinks.monero.url"
+        target="self"
+        aria-label="Learn more about Monero payments"
+      >
+        {{ specificLinks.monero.text }} </a
+      >&nbsp;and&nbsp;<a
+        style="color: #18ffe3"
+        [href]="specificLinks.zano.url"
+        target="self"
+        aria-label="Learn more about Zano payments"
+      >
         {{ specificLinks.zano.text }}
       </a>
       preferred.
     </p>
 
-    <p style="margin-top: 4rem;">
+    <p style="margin-top: 4rem">
       <a
         [href]="specificLinks.gust.url"
         target="self"
         style="color: #18ffe3; cursor: pointer"
+        aria-label="Learn more about our company"
       >
         {{ specificLinks.gust.text }}
       </a>
     </p>
 
     <div class="aquarian-metals-logo">
-      <a [href]="specificLinks.company.url" target="self" style="color: white; text-decoration: none;">
+      <a
+        [href]="specificLinks.company.url"
+        target="self"
+        style="color: white; text-decoration: none"
+        aria-label="Visit Aquarian Metals website"
+        rel="noopener"
+      >
         <div>An Aquarian Metals project</div>
         <div>
           <img
             src="assets/images/Site_logo_small.png"
-            alt="Aquarian Metals"
+            alt="Aquarian Metals - Professional cryptocurrency research and investment platform"
             style="width: 300px"
+            loading="lazy"
+            width="300"
+            height="80"
+            fetchpriority="low"
           />
         </div>
       </a>
     </div>
 
-    <nav class="footer-nav">
+    <nav class="footer-nav" aria-label="Footer navigation">
       <p>
         @for (link of footerLinks; track link?.route; let last = $last) {
         <a
           [routerLink]="[link.route]"
           style="color: #18ffe3; cursor: pointer"
+          [attr.aria-label]="'Go to ' + link?.text"
           >{{ link?.text }}</a
         >
         @if (!last) { | } }

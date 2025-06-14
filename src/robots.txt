@@ -1,6 +1,9 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+Disallow: /login
+Disallow: /redeem
+Disallow: /api/
 
 # Sitemap location
 Sitemap: https://www.fundamentally.xyz/sitemap.xml

@@ -1,0 +1,18 @@
+{
+  "name": "FUNDAMENTALLY",
+  "short_name": "FUNDAMENTALLY",
+  "description": "Professional crypto investment research and portfolio management platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/Site_logo_small.png",
+      "sizes": "231x46",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+} 

@@ -1,57 +1,101 @@
 <app-header></app-header>
 
-<div class="purchase-options-container">
-  <div class="activation-section-container">
-    <div class="activation-section">
-      <p>Already have a key?</p>
-      <a class="button accent" [href]="activationUrl" target="_blank">
-        Activate Here
-      </a>
-    </div>
-  </div>
+<div class="error-section">
+	<div class="content-wrapper">
+		<div class="error-card">
+			<h1>Purchase Options</h1>
+			<h2>Choose Your Plan</h2>
 
-  <div class="choose-option-header">Choose the plan that’s right for you!</div>
+			<section class="activation-section-container" aria-labelledby="activation-title">
+				<div class="activation-section">
+					<h2 id="activation-title" class="visually-hidden">Activation</h2>
+					<p>Already have a key?</p>
+					<a 
+						class="button accent" 
+						[href]="activationUrl" 
+						target="_blank"
+						aria-label="Activate your Fundamentally subscription"
+					>
+						Activate Here
+					</a>
+				</div>
+			</section>
 
-  <div class="options-grid">
-    <div *ngFor="let option of purchaseOptions" class="option-card">
-      <div class="card-header">
-        <span
-          class="card-icon"
-          [ngClass]="{ 'bitcoin-icon': option.icon === '₿' }"
-          >{{ option.icon }}</span
-        >
-        <h2 class="card-title">{{ option.title }}</h2>
-      </div>
-      <div class="card-content">
-        <div class="plan-price">{{ option.price }}</div>
-        <p>{{ option.description }}</p>
-      </div>
-      <div class="card-actions">
-        <a class="button primary" [href]="option.link" target="_blank">
-          Select Plan
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="info-banner">
-    <span class="info-icon">ℹ️</span>
-    <p>
-      All purchases are processed through
-      <a
-        style="color: #18ffe3"
-        href="https://www.aquarianmetals.com"
-        target="_blank"
-        >Aquarian Metals</a
-      >. You will receive an activation key upon successful payment.
-    </p>
-  </div>
-  <section class="features-section">
-    <h2>All Plans Include:</h2>
-    <div class="features-grid">
-      <div class="feature-card" *ngFor="let feature of features">
-        <span class="feature-icon">{{ feature.icon }}</span>
-        <span class="feature-text">{{ feature.text }}</span>
-      </div>
-    </div>
-  </section>
+			<div class="options-grid" role="list">
+				@for (option of purchaseOptions; track option.title) {
+				<article class="option-card" role="listitem">
+					<div class="card-header">
+						<span
+							class="card-icon"
+							[ngClass]="{ 'bitcoin-icon': option.icon === '₿' }"
+							aria-hidden="true"
+							>{{ option.icon }}</span
+						>
+						<h3 class="card-title">{{ option.title }}</h3>
+					</div>
+					<div class="card-content">
+						<div class="plan-price">{{ option.price }}</div>
+						<p>{{ option.description }}</p>
+					</div>
+					<div class="card-actions">
+						<a 
+							class="button primary" 
+							[href]="option.link" 
+							target="_blank"
+							[attr.aria-label]="'Select ' + option.title + ' plan'"
+						>
+							Select Plan
+						</a>
+					</div>
+				</article>
+				}
+			</div>
+
+			<section class="info-section" aria-labelledby="info-title">
+				<h2 id="info-title" class="visually-hidden">Payment Information</h2>
+				<div class="info-banner">
+					<span class="info-icon" aria-hidden="true">ℹ️</span>
+					<p>
+						All purchases are processed through
+						<a
+							href="https://www.aquarianmetals.com"
+							target="_blank"
+							aria-label="Visit Aquarian Metals payment processor"
+							>Aquarian Metals</a
+						>. You will receive an activation key upon successful payment.
+					</p>
+				</div>
+			</section>
+
+			<section class="features-section" aria-labelledby="features-title">
+				<h2 id="features-title">All Plans Include:</h2>
+				<div class="features-grid" role="list">
+					@for (feature of features; track feature.text) {
+					<article class="feature-item" role="listitem">
+						<span class="feature-icon" aria-hidden="true">{{ feature.icon }}</span>
+						<span class="feature-text">{{ feature.text }}</span>
+					</article>
+					}
+				</div>
+			</section>
+
+			<div class="error-actions">
+				<a routerLink="/" class="primary-button">Return Home</a>
+			</div>
+		</div>
+	</div>
 </div>
+
+<style>
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+</style>

@@ -9,13 +9,14 @@
       *ngFor="let feature of features; let i = index"
       class="feature-block"
       [class.feature-block-reverse]="i % 2 !== 0"
-      role="listitem"
+      role="article"
+      [attr.aria-labelledby]="'feature-title-' + i"
     >
       <div class="feature-content">
-        <h3>{{ feature.title }}</h3>
+        <h3 [id]="'feature-title-' + i">{{ feature.title }}</h3>
         <p class="feature-description">{{ feature.description }}</p>
 
-        <ul class="feature-points" role="list">
+        <ul class="feature-points" role="list" aria-label="Key features">
           <li *ngFor="let point of feature.points" role="listitem">
             <span class="check-icon" aria-hidden="true">✓</span>
             <span>{{ point }}</span>
@@ -23,7 +24,7 @@
         </ul>
       </div>
 
-      <div class="feature-image">
+      <div class="feature-image" role="img" [attr.aria-label]="feature.alt">
         <div class="image-placeholder">
           <img
             [src]="feature.image"
@@ -32,6 +33,7 @@
             height="225"
             [alt]="feature.alt"
             loading="lazy"
+            decoding="async"
           />
         </div>
       </div>

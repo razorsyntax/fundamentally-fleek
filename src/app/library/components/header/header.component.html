@@ -1,13 +1,14 @@
 <!-- Header Section -->
-<header class="header-styling">
+<header class="header-styling" role="banner">
   <div class="container">
-    <nav class="nav-container">
-      <a href="/">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="/" aria-label="Fundamentally Home">
         <div class="logo-container">
           <img
-            width="50px"
+            width="50"
+            height="50"
             src="./../../assets/images/pheonix_purple.webp"
-            alt="Fundamentally Phoenix Logo"
+            alt="Fundamentally Phoenix Logo - Return to homepage"
             loading="lazy"
           />
           <div class="text-logo montserrat-font">FUNDAMENTALLY</div>
@@ -22,6 +23,7 @@
         class="login-link"
         href="https://crypto.fundamentally.app/login"
         target="self"
+        aria-label="Login to Fundamentally Dashboard"
         >Login</a
       >
     </div>
@@ -32,12 +34,18 @@
         [href]="'https://www.aquarianmetals.com'"
         target="self"
         class="aquarian-metals-logo__link"
+        aria-label="Visit Aquarian Metals website"
+        rel="noopener"
       >
         <div class="aquarian-metals-logo__container">
           <img
             src="assets/images/Site_logo_small.png"
-            alt="Aquarian Metals"
+            alt="Aquarian Metals - Professional cryptocurrency research and investment platform"
             class="aquarian-metals-logo__image"
+            loading="lazy"
+            width="100"
+            height="25"
+            fetchpriority="low"
           />
         </div>
       </a>

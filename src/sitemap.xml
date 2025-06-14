@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.fundamentally.xyz/</loc>
-    <lastmod>2024-03-19</lastmod>
+    <lastmod>2024-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,15 +11,15 @@
   <!-- Public Pages -->
   <url>
     <loc>https://www.fundamentally.xyz/terms-and-conditions</loc>
-    <lastmod>2024-03-19</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2024-02-27</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://www.fundamentally.xyz/privacy-policy</loc>
-    <lastmod>2024-03-19</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2024-02-27</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
@@ -32,8 +32,8 @@
 
   <url>
     <loc>https://www.fundamentally.xyz/purchase-options</loc>
-    <lastmod>2024-03-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset> 

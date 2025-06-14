@@ -4,6 +4,8 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { RefundsComponent } from './refunds/refunds.component';
 import { PurchaseOptionsComponent } from './purchase-options/purchase-options.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ErrorComponent } from './error/error.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,5 +14,7 @@ export const routes: Routes = [
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
   { path: 'refunds', component: RefundsComponent },
   { path: 'purchase-options', component: PurchaseOptionsComponent },
-  // { path: '**', component: PageNotFoundComponent },
+  { path: 'error', component: ErrorComponent },
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '404' }
 ];
