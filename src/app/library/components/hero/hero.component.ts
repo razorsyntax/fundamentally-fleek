@@ -1,23 +1,27 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { OptimizedImageComponent } from '../../../shared/components/optimized-image/optimized-image.component';
 import { UtilitiesService } from '../../services/utilities.service';
-import { Router, RouterModule } from '@angular/router';
+
 @Component({
-    selector: 'app-hero-section',
-    imports: [CommonModule, RouterModule],
-    templateUrl: './hero.component.html',
-    styleUrls: ['./hero.component.scss']
+	selector: 'app-hero-section',
+	standalone: true,
+	imports: [CommonModule, OptimizedImageComponent],
+	templateUrl: './hero.component.html',
+	styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
-  utilities = inject(UtilitiesService);
-  price = this.utilities.getMonthlyPrice();
-  router = inject(Router);
+	private readonly utilities = inject(UtilitiesService);
+	private readonly router = inject(Router);
 
-  public getAriaLabel(): string {
-    return `Get Started Now for $${this.price}/month`;
-  }
+	public readonly $price = signal(this.utilities.getMonthlyPrice());
 
-  navigateToPurchaseOptions() {
-    this.router.navigate(['/purchase-options']);
-  }
+	public navigateToPurchaseOptions(): void {
+		this.router.navigate(['/purchase-options']);
+	}
+
+	public getAriaLabel(): string {
+		return `Get started with Fundamentally for $${this.$price()} per month`;
+	}
 }

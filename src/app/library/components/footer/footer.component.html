@@ -61,14 +61,14 @@
       >
         <div>An Aquarian Metals project</div>
         <div>
-          <img
+          <app-optimized-image
             src="assets/images/Site_logo_small.png"
             alt="Aquarian Metals - Professional cryptocurrency research and investment platform"
-            style="width: 300px"
+            [width]="300"
+            [height]="80"
             loading="lazy"
-            width="300"
-            height="80"
             fetchpriority="low"
+            className="aquarian-metals-logo__image"
           />
         </div>
       </a>

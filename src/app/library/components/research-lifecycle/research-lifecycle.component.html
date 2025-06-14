@@ -5,11 +5,13 @@
 
       <div class="lifecycle-container">
         <figure class="lifecycle-img">
-          <img 
+          <app-optimized-image 
             src="/assets/images/investmentlifecycle.webp" 
-            width="350" 
+            [width]="350"
+            [height]="200"
             alt="Investment lifecycle diagram showing Research, Risk Management, and Trading Actions phases" 
-            loading="lazy" 
+            loading="lazy"
+            className="lifecycle-image"
           />
           <figcaption class="visually-hidden">The investment lifecycle has three components: Research, Risk Management, and Trading Actions</figcaption>
         </figure>

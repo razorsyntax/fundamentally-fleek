@@ -26,14 +26,14 @@
 
       <div class="feature-image" role="img" [attr.aria-label]="feature.alt">
         <div class="image-placeholder">
-          <img
+          <app-optimized-image
             [src]="feature.image"
-            class="feature-image"
-            width="450"
-            height="225"
             [alt]="feature.alt"
+            [width]="450"
+            [height]="225"
             loading="lazy"
             decoding="async"
+            className="feature-image"
           />
         </div>
       </div>

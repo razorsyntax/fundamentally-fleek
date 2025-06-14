@@ -1,12 +1,14 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { OptimizedImageComponent } from '../../../shared/components/optimized-image/optimized-image.component';
 
 @Component({
     selector: 'app-header',
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        OptimizedImageComponent
     ],
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],

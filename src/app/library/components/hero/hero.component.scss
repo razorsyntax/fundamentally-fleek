@@ -11,10 +11,22 @@
   background-attachment: fixed;
   border-bottom: 2px solid white;
 
+  @media (max-width: 1024px) {
+    padding: 2rem;
+    gap: 3rem;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
     gap: 2rem;
+    min-height: auto;
+    padding-top: 6rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    padding-top: 5rem;
   }
 }
 
@@ -22,9 +34,14 @@
   flex: 1;
   max-width: 600px;
 
+  @media (max-width: 1024px) {
+    max-width: 500px;
+  }
+
   @media (max-width: 768px) {
-    padding-top: 10rem;
-    max-height: 317px;
+    padding-top: 0;
+    max-height: none;
+    max-width: 100%;
   }
 }
 
@@ -41,9 +58,18 @@
   font-weight: bold;
   letter-spacing: -0.02em;
 
+  @media (max-width: 1024px) {
+    font-size: 4rem;
+  }
+
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.25rem;
   }
 }
 
@@ -60,8 +86,20 @@
   color: #ffffff;
   opacity: 0.95;
 
+  @media (max-width: 1024px) {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
   @media (max-width: 768px) {
+    font-size: 1.3rem;
     text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -89,6 +127,22 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  min-height: 60px;
+  min-width: 200px;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    padding: 0.875rem 1.75rem;
+    min-height: 54px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    min-height: 48px;
+  }
 
   &:hover {
     background: #7b1fa2;
@@ -100,6 +154,14 @@
     opacity: 0.9;
     color: #18ffe3;
     font-size: 1.3rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -108,9 +170,15 @@
   gap: 2rem;
   flex-wrap: wrap;
 
+  @media (max-width: 1024px) {
+    gap: 1.75rem;
+  }
+
   @media (max-width: 768px) {
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -121,6 +189,16 @@
   align-items: center;
   gap: 0.5rem;
   font-family: 'Lato';
+
+  @media (max-width: 1024px) {
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .feature-check {
@@ -132,27 +210,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 1024px) {
+    max-width: 60%;
+  }
 
   @media (max-width: 768px) {
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  ::ng-deep app-optimized-image {
+    display: block;
     width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 }
 
 .dashboard-preview {
-  width: 100%;
+  width: auto;
   height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  object-fit: contain;
   border-radius: 12px;
   box-shadow: 1px 10px 22px -4px black;
 
-  @media (min-width: 1920px) {
-    max-width: 1600px;
-    margin: 0 auto;
-  }
-
   @media (max-width: 768px) {
-    max-height: 50vh;
-    object-fit: contain;
+    border-radius: 8px;
   }
 }
 

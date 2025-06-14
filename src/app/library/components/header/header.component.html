@@ -4,12 +4,13 @@
     <nav class="nav-container" aria-label="Main navigation">
       <a href="/" aria-label="Fundamentally Home">
         <div class="logo-container">
-          <img
-            width="50"
-            height="50"
+          <app-optimized-image
             src="./../../assets/images/pheonix_purple.webp"
             alt="Fundamentally Phoenix Logo - Return to homepage"
+            [width]="50"
+            [height]="50"
             loading="lazy"
+            className="logo-image"
           />
           <div class="text-logo montserrat-font">FUNDAMENTALLY</div>
         </div>
@@ -38,14 +39,14 @@
         rel="noopener"
       >
         <div class="aquarian-metals-logo__container">
-          <img
+          <app-optimized-image
             src="assets/images/Site_logo_small.png"
             alt="Aquarian Metals - Professional cryptocurrency research and investment platform"
-            class="aquarian-metals-logo__image"
+            [width]="100"
+            [height]="25"
             loading="lazy"
-            width="100"
-            height="25"
             fetchpriority="low"
+            className="aquarian-metals-logo__image"
           />
         </div>
       </a>

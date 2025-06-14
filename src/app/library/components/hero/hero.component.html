@@ -13,30 +13,31 @@
       </p>
 
       <div class="hero-cta">
-          <div class="price-banner">
-            <button 
-              class="primary-button" 
-              (click)="navigateToPurchaseOptions()" 
-              [attr.aria-label]="getAriaLabel()"
-            >
-              Get Started Now
-              <span class="button-subtitle">
-                <span style="color: #18ffe3;">${{ price }}/mo</span>
-              </span>
-            </button>
-          </div>
+        <div class="price-banner">
+          <button
+            class="primary-button"
+            (click)="navigateToPurchaseOptions()"
+            [attr.aria-label]="getAriaLabel()"
+            type="button"
+          >
+            Get Started Now
+            <span class="button-subtitle">
+              <span style="color: #18ffe3">${{ $price() }}/mo</span>
+            </span>
+          </button>
+        </div>
       </div>
 
       <nav class="hero-features" aria-label="Key Features">
-        <div class="feature">
+        <div class="feature" role="listitem">
           <span class="feature-check" aria-hidden="true">✓</span>
           <span>Quantifiable Asset Scoring</span>
         </div>
-        <div class="feature">
+        <div class="feature" role="listitem">
           <span class="feature-check" aria-hidden="true">✓</span>
           <span>Smart Position Sizing</span>
         </div>
-        <div class="feature">
+        <div class="feature" role="listitem">
           <span class="feature-check" aria-hidden="true">✓</span>
           <span>Portfolio Optimization</span>
         </div>
@@ -45,14 +46,15 @@
   </div>
 
   <div class="hero-image">
-    <img
+    <app-optimized-image
       src="/assets/images/dashboard.webp"
       alt="Fundamentally Dashboard Interface showing professional crypto investment tools and analytics"
-      class="dashboard-preview"
+      [width]="1000"
+      [height]="700"
       loading="eager"
-      width="800"
-      height="600"
       fetchpriority="high"
+      className="dashboard-preview"
+      overflow="visible"
     />
   </div>
 </section>

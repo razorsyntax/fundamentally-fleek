@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { OptimizedImageComponent } from '../../../shared/components/optimized-image/optimized-image.component';
 
 enum SocialPlatform {
   X = 'x',
@@ -40,7 +41,7 @@ interface SpecificLinks {
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, OptimizedImageComponent],
 })
 export class FooterComponent {
   readonly SocialPlatform = SocialPlatform;
