@@ -1,14 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OptimizedImageComponent } from '../../../shared/components/optimized-image/optimized-image.component';
 
+interface ImageModalConfig {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 @Component({
     selector: 'app-feature-showcase',
+    standalone: true,
     imports: [CommonModule, OptimizedImageComponent],
     templateUrl: './feature-showcase.component.html',
-    styleUrls: ['./feature-showcase.component.scss']
+    styleUrls: ['./feature-showcase.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FeatureShowcaseComponent {
+  protected readonly $isModalVisible = signal(false);
+  protected readonly $modalConfig = signal<ImageModalConfig | null>(null);
+
   features = [
     {
       title: 'Your Portfolio\'s Control Center',
@@ -47,4 +59,27 @@ export class FeatureShowcaseComponent {
       ],
     },
   ];
+
+  protected openModal(config: ImageModalConfig): void {
+    this.$modalConfig.set(config);
+    this.$isModalVisible.set(true);
+    document.body.style.overflow = 'hidden';
+  }
+
+  protected closeModal(): void {
+    this.$isModalVisible.set(false);
+    this.$modalConfig.set(null);
+    document.body.style.overflow = '';
+  }
+
+  protected onBackdropClick(event: MouseEvent): void {
+    this.closeModal();
+  }
+
+  @HostListener('window:keyup.escape')
+  protected onEscapePress(): void {
+    if (this.$isModalVisible()) {
+      this.closeModal();
+    }
+  }
 }

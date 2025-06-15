@@ -25,7 +25,7 @@
       </div>
 
       <div class="feature-image" role="img" [attr.aria-label]="feature.alt">
-        <div class="image-placeholder">
+        <div class="image-placeholder" (click)="openModal({ src: feature.image, alt: feature.alt, width: 450, height: 225 })" role="button" tabindex="0">
           <app-optimized-image
             [src]="feature.image"
             [alt]="feature.alt"
@@ -39,4 +39,23 @@
       </div>
     </article>
   </div>
+
+  @if ($isModalVisible()) {
+    <div class="modal-overlay" (click)="onBackdropClick($event)">
+      <div class="modal-container" (click)="$event.stopPropagation()">
+        <button class="close-button" (click)="closeModal()" aria-label="Close modal">×</button>
+        <div class="modal-content">
+          @if ($modalConfig()) {
+            <img 
+              [src]="$modalConfig()?.src" 
+              [alt]="$modalConfig()?.alt"
+              [width]="$modalConfig()?.width"
+              [height]="$modalConfig()?.height"
+              class="modal-image"
+            />
+          }
+        </div>
+      </div>
+    </div>
+  }
 </section>
