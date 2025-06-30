@@ -35,6 +35,7 @@ interface SpecificLinks {
   gust: FooterLink;
   company: FooterLink;
   zano: FooterLink;
+  beam: FooterLink;
 }
 
 @Component({
@@ -67,6 +68,7 @@ export class FooterComponent {
     gust: { text: 'As seen on the investment platform Gust', type: LinkType.EXTERNAL, url: 'https://gust.com/companies/fundamentally-crypto' },
     company: { text: 'The Aquarian, LLC', type: LinkType.EXTERNAL, url: 'https://www.aquarianmetals.com/' },
     zano: { text: 'Zano', type: LinkType.EXTERNAL, url: 'https://zano.org/' },
+    beam: { text: 'Beam', type: LinkType.EXTERNAL, url: 'https://beam.mw/' },
   };
 
   readonly currentYear = new Date().getFullYear();
