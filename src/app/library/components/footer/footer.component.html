@@ -12,10 +12,10 @@
       }
     </nav>
 
-    <p style="margin-top: 4rem">
+    <p class="section-margin">
       🔒 We securely accept USD and over 300 cryptocurrencies with
       <a
-        style="color: #18ffe3"
+        class="highlight-link"
         [href]="specificLinks.nowPayments.url"
         target="self"
         aria-label="Learn more about our payment processor"
@@ -23,21 +23,21 @@
         {{ specificLinks.nowPayments.text }} </a
       >.
       <a
-        style="color: #18ffe3"
+        class="highlight-link"
         [href]="specificLinks.monero.url"
         target="self"
         aria-label="Learn more about Monero payments"
       >
         {{ specificLinks.monero.text }} </a
       >, <a
-        style="color: #18ffe3"
+        class="highlight-link"
         [href]="specificLinks.zano.url"
         target="self"
         aria-label="Learn more about Zano payments"
       >
         {{ specificLinks.zano.text }}
       </a> and <a
-        style="color: #18ffe3"
+        class="highlight-link"
         [href]="specificLinks.beam.url"
         target="self"
         aria-label="Learn more about Beam payments"
@@ -46,11 +46,11 @@
       </a> preferred.
     </p>
 
-    <p style="margin-top: 4rem">
+    <p class="section-margin">
       <a
         [href]="specificLinks.gust.url"
         target="self"
-        style="color: #18ffe3; cursor: pointer"
+        class="interactive-link"
         aria-label="Learn more about our company"
       >
         {{ specificLinks.gust.text }}
@@ -61,7 +61,7 @@
       <a
         [href]="specificLinks.company.url"
         target="self"
-        style="color: white; text-decoration: none"
+        class="company-link"
         aria-label="Visit Aquarian Metals website"
         rel="noopener"
       >
@@ -85,7 +85,7 @@
         @for (link of footerLinks; track link?.route; let last = $last) {
         <a
           [routerLink]="[link.route]"
-          style="color: #18ffe3; cursor: pointer"
+          class="interactive-link"
           [attr.aria-label]="'Go to ' + link?.text"
           >{{ link?.text }}</a
         >
