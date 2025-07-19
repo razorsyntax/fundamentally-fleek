@@ -18,7 +18,9 @@ export const environment: Environment = {
 			https://hcaptcha.com https://*.hcaptcha.com;
 		frame-src 'self' blob: data:
 			https://hcaptcha.com https://*.hcaptcha.com
-			https://docs.google.com;
+			https://docs.google.com
+			https://www.youtube.com https://www.youtube-nocookie.com
+			https://youtube.com https://youtu.be;
 		style-src 'self' 'unsafe-inline'
 			https://fonts.googleapis.com;
 		font-src 'self' https://fonts.gstatic.com http://fonts.gstatic.com data:;
