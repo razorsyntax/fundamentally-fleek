@@ -31,7 +31,7 @@ export class PurchaseOptionsComponent {
       icon: '📆',
       link: `${this.aquarianMetalsUrl}/product/fundamentally-monthly-subscription/`,
       renewal: 'Auto-renew',
-      price: '$19.99/month'
+      price: '$29.99/month'
     },
     {
       title: 'Annual Plan (Recurring)',

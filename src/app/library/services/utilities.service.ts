@@ -9,11 +9,11 @@ export class UtilitiesService {
   constructor() {}
 
   getAnnualPrice() {
-    return 239.88;
+    return 359.88;
   }
 
   getMonthlyPrice() {
-    return 19.99;
+    return 29.99;
   }
 
   getRegularPrice() {
