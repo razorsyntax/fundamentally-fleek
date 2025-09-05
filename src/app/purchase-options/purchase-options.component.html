@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <main>
-	<section class="activation-section-container" aria-labelledby="activation-title">
+	<!-- <section class="activation-section-container" aria-labelledby="activation-title">
 		<div class="activation-section">
 			<p>Already have a key?</p>
 			<a 
@@ -14,13 +14,14 @@
 				Activate Here
 			</a>
 		</div>
-	</section>
+	</section> -->
 
 	<section class="purchase-options-section" aria-labelledby="purchase-options-title">
 		<div class="content-wrapper">
 			<div class="error-card">
 				<h1 id="purchase-options-title">Purchase Options</h1>
 				<h2>Choose Your Plan</h2>
+				<p class="global-cta-note">Next step: Create your account. You’ll confirm your plan and pay inside your account.</p>
 
 				<div class="options-grid" role="list" aria-label="Available subscription plans">
 					@for (option of purchaseOptions; track option.title) {
@@ -41,19 +42,19 @@
 						<footer class="card-actions">
 							<a 
 								class="button primary" 
-								[href]="option.link" 
+								[href]="registerUrl" 
 								target="_blank"
 								rel="noopener noreferrer"
-								[attr.aria-label]="'Select ' + option.title + ' plan for ' + option.price"
+								[attr.aria-label]="'Sign up now to continue with ' + option.title"
 							>
-								Select Plan
+								Sign up now
 							</a>
 						</footer>
 					</article>
 					}
 				</div>
 
-				<section class="info-section" aria-labelledby="info-title">
+				<!-- <section class="info-section" aria-labelledby="info-title">
 					<h2 id="info-title" class="visually-hidden">Payment Information</h2>
 					<div class="info-banner" role="complementary">
 						<span class="info-icon" aria-hidden="true">ℹ️</span>
@@ -68,7 +69,7 @@
 							>. You will receive an activation key upon successful payment.
 						</p>
 					</div>
-				</section>
+				</section> -->
 
 				<section class="features-section" aria-labelledby="features-title">
 					<h2 id="features-title">All Plans Include:</h2>

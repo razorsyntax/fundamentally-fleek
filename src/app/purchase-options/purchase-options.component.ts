@@ -14,6 +14,8 @@ import { FooterComponent } from '../library/components/footer/footer.component';
 export class PurchaseOptionsComponent {
   readonly aquarianMetalsUrl = 'https://www.aquarianmetals.com';
   readonly activationUrl = 'https://crypto.fundamentally.app/redeem';
+  readonly registerUrl = 'https://crypto.fundamentally.app/register';
+  readonly loginUrl = 'https://crypto.fundamentally.app/login';
 
   readonly features = [
     { icon: '📊', text: 'Fundamental asset data for thousands of assets' },

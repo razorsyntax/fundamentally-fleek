@@ -13,7 +13,7 @@ export const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
   { path: 'refunds', component: RefundsComponent },
-  // { path: 'purchase-options', component: PurchaseOptionsComponent },
+  { path: 'purchase-options', component: PurchaseOptionsComponent },
   { path: 'error', component: ErrorComponent },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '404' }
